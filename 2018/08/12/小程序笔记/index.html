@@ -6,22 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>小程序笔记 | 轮子风很酷</title>
+  <title>灭霸小程序项目笔记 | 轮子风很酷</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="Json&#39;s blog">
+  <meta name="description" content="一、Es6 1、概念：使用babel愈发转换器，支持低端浏览器。 2、换行    例：console.log(‘hello {name}                hello world               ‘) 3、箭头函数    例：const add = (num1,num2) =&amp;gt; num1 + num2    释：相当于 const add = function(num">
+<meta name="keywords" content="Json&#39;s blog">
 <meta property="og:type" content="article">
-<meta property="og:title" content="小程序笔记">
-<meta property="og:url" content="http://yoursite.com/2018/08/31/小程序笔记/index.html">
+<meta property="og:title" content="灭霸小程序项目笔记">
+<meta property="og:url" content="http://yoursite.com/2018/08/12/小程序笔记/index.html">
 <meta property="og:site_name" content="轮子风很酷">
+<meta property="og:description" content="一、Es6 1、概念：使用babel愈发转换器，支持低端浏览器。 2、换行    例：console.log(‘hello {name}                hello world               ‘) 3、箭头函数    例：const add = (num1,num2) =&amp;gt; num1 + num2    释：相当于 const add = function(num">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-31T05:37:24.494Z">
+<meta property="og:updated_time" content="2018-09-03T17:04:35.913Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小程序笔记">
+<meta name="twitter:title" content="灭霸小程序项目笔记">
+<meta name="twitter:description" content="一、Es6 1、概念：使用babel愈发转换器，支持低端浏览器。 2、换行    例：console.log(‘hello {name}                hello world               ‘) 3、箭头函数    例：const add = (num1,num2) =&amp;gt; num1 + num2    释：相当于 const add = function(num">
   
     <link rel="alternative" href="/atom.xml" title="轮子风很酷" type="application/atom+xml">
   
   
-    <link rel="icon" href="[object Object]">
+    <link rel="icon" href="/images/favicon.ico">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -159,20 +162,76 @@
         
   
     <h1 class="article-title" itemprop="name">
-      小程序笔记
+      灭霸小程序项目笔记
     </h1>
   
 
         
-        <a href="/2018/08/31/小程序笔记/" class="archive-article-date">
-  	<time datetime="2018-08-31T05:37:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-31</time>
+        <a href="/2018/08/12/小程序笔记/" class="archive-article-date">
+  	<time datetime="2018-08-12T05:37:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-12</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>一、Es6</p>
+<p>1、概念：使用babel愈发转换器，支持低端浏览器。</p>
+<p>2、换行</p>
+<p>   例：console.log(‘hello {name}<br>                hello world<br>               ‘)</p>
+<p>3、箭头函数</p>
+<p>   例：const add = (num1,num2) =&gt; num1 + num2</p>
+<p>   释：相当于 const add = function(num1,num2) {<br>                   return num1 + num2<br>               }</p>
+<p>   注：1、箭头函数是匿名函数，不能作为构造函数，不能使用new</p>
+<pre><code>2、箭头函数不绑定arguments，取而代之用rest参数...             解决
+
+3、箭头函数不绑定this，会捕获其所在的上下文的this             值，作为自己的this值
+
+4、箭头函数通过 call() 或 apply() 方法调用一个               函数时，只传入了一个参数，对 this 并没有影响。
+
+5、箭头函数没有原型属性
+
+6、箭头函数不能当做Generator函数,不能使用yield关键            字
+</code></pre><p>4、数组与对象的解构</p>
+<pre><code>例1： let arr = [5,6]
+    console.log((...arr))
+    console.log([1,2,3,...arr])
+
+释1： 5，6
+     1，2，3，5，6
+
+
+例2: const key = &apos;job&apos;
+     const obj = {
+         key,
+        num:1,
+        str:&apos;mieba&apos;,
+        work(){
+
+        },
+        [key]:&apos;fe&apos;,
+        [key+&apos;work&apos;]:&apos;fe&apos;
+     }
+
+释2: key 相当于 key = key,
+     [key] ：&apos;fe&apos; 相当于 job ：fe
+     [key+&apos;&apos;] ：&apos;fe&apos; 相当于 jobwork ：fe
+
+
+例3: let arr = [1,2]
+     let [num1,num2] = arr
+
+释3: 相当于 let num1 = arr[1]
+           let num2 = arr[2]
+
+
+例4: const obj = {type:&apos;IT&apos;,name = &apos;work&apos;}
+     const {type,name} = obj
+
+释4: 相当于 const name = &apos;work&apos;
+           const type = &apos;IT&apos;
+</code></pre><p> 5、模块化</p>
+
       
 
       
@@ -251,7 +310,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/08/31/小程序笔记/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/08/12/小程序笔记/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -265,11 +324,15 @@
   
 <nav id="article-nav">
   
-  
-    <a href="/2018/08/31/vue笔记/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">vue笔记</div>
-      <i class="icon-circle-right"></i>
+    <a href="/2018/08/17/vue笔记/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          vue笔记
+        
+      </div>
     </a>
+  
   
 </nav>
 
