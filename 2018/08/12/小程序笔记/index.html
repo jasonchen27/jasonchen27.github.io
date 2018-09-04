@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>灭霸小程序项目笔记 | 轮子风很酷</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、Es6 1、概念：使用babel语法转换器，支持低端浏览器。 2、换行    例1：console.log(‘hello {name}                hello world               ‘) 3、箭头函数    例1：const add = (num1,num2) =&amp;gt; num1 + num2    释1：相当于 const add = function(">
+  <meta name="description" content="一、Es61、概念：使用babel语法转换器，支持低端浏览器。2、换行    例1：1234	console.log(&amp;apos;hello &amp;#123;name&amp;#125; hello world           &amp;apos;)     3、箭头函数    例1：12const add = (num1,num2) =&amp;gt; num1 + num2       释1：相当于 1234cons">
 <meta name="keywords" content="Json&#39;s blog">
 <meta property="og:type" content="article">
 <meta property="og:title" content="灭霸小程序项目笔记">
 <meta property="og:url" content="http://yoursite.com/2018/08/12/小程序笔记/index.html">
 <meta property="og:site_name" content="轮子风很酷">
-<meta property="og:description" content="一、Es6 1、概念：使用babel语法转换器，支持低端浏览器。 2、换行    例1：console.log(‘hello {name}                hello world               ‘) 3、箭头函数    例1：const add = (num1,num2) =&amp;gt; num1 + num2    释1：相当于 const add = function(">
+<meta property="og:description" content="一、Es61、概念：使用babel语法转换器，支持低端浏览器。2、换行    例1：1234	console.log(&amp;apos;hello &amp;#123;name&amp;#125; hello world           &amp;apos;)     3、箭头函数    例1：12const add = (num1,num2) =&amp;gt; num1 + num2       释1：相当于 1234cons">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-03T17:07:45.198Z">
+<meta property="og:updated_time" content="2018-09-04T00:41:47.830Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="灭霸小程序项目笔记">
-<meta name="twitter:description" content="一、Es6 1、概念：使用babel语法转换器，支持低端浏览器。 2、换行    例1：console.log(‘hello {name}                hello world               ‘) 3、箭头函数    例1：const add = (num1,num2) =&amp;gt; num1 + num2    释1：相当于 const add = function(">
+<meta name="twitter:description" content="一、Es61、概念：使用babel语法转换器，支持低端浏览器。2、换行    例1：1234	console.log(&amp;apos;hello &amp;#123;name&amp;#125; hello world           &amp;apos;)     3、箭头函数    例1：12const add = (num1,num2) =&amp;gt; num1 + num2       释1：相当于 1234cons">
   
     <link rel="alternative" href="/atom.xml" title="轮子风很酷" type="application/atom+xml">
   
@@ -175,62 +175,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>一、Es6</p>
-<p>1、概念：使用babel语法转换器，支持低端浏览器。</p>
-<p>2、换行</p>
-<p>   例1：console.log(‘hello {name}<br>                hello world<br>               ‘)</p>
+        <h1 id="一、Es6"><a href="#一、Es6" class="headerlink" title="一、Es6"></a>一、Es6</h1><h2 id="1、概念：使用babel语法转换器，支持低端浏览器。"><a href="#1、概念：使用babel语法转换器，支持低端浏览器。" class="headerlink" title="1、概念：使用babel语法转换器，支持低端浏览器。"></a>1、概念：使用babel语法转换器，支持低端浏览器。</h2><p>2、换行</p>
+<p>   例1：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">	console.log(&apos;hello &#123;name&#125; </span><br><span class="line">hello world</span><br><span class="line">           &apos;)</span><br><span class="line">    </span><br></pre></td></tr></table></figure></p>
 <p>3、箭头函数</p>
-<p>   例1：const add = (num1,num2) =&gt; num1 + num2</p>
-<p>   释1：相当于 const add = function(num1,num2) {<br>                   return num1 + num2<br>               }</p>
-<p>   注：1、箭头函数是匿名函数，不能作为构造函数，不能使用new</p>
-<pre><code>2、箭头函数不绑定arguments，取而代之用rest参数...             解决
-
-3、箭头函数不绑定this，会捕获其所在的上下文的this             值，作为自己的this值
-
-4、箭头函数通过 call() 或 apply() 方法调用一个               函数时，只传入了一个参数，对 this 并没有影响。
-
-5、箭头函数没有原型属性
-
-6、箭头函数不能当做Generator函数,不能使用yield关键            字
-</code></pre><p>4、数组与对象的解构</p>
-<pre><code>例1： let arr = [5,6]
-    console.log((...arr))
-    console.log([1,2,3,...arr])
-
-释1： 5，6
-     1，2，3，5，6
-
-
-例2: const key = &apos;job&apos;
-     const obj = {
-         key,
-        num:1,
-        str:&apos;mieba&apos;,
-        work(){
-
-        },
-        [key]:&apos;fe&apos;,
-        [key+&apos;work&apos;]:&apos;fe&apos;
-     }
-
-释2: key 相当于 key = key,
-     [key] ：&apos;fe&apos; 相当于 job ：fe
-     [key+&apos;&apos;] ：&apos;fe&apos; 相当于 jobwork ：fe
-
-
-例3: let arr = [1,2]
-     let [num1,num2] = arr
-
-释3: 相当于 let num1 = arr[1]
-           let num2 = arr[2]
-
-
-例4: const obj = {type:&apos;IT&apos;,name = &apos;work&apos;}
-     const {type,name} = obj
-
-释4: 相当于 const name = &apos;work&apos;
-           const type = &apos;IT&apos;
-</code></pre><p> 5、模块化</p>
+<p>   例1：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const add = (num1,num2) =&gt; num1 + num2</span><br><span class="line">   </span><br></pre></td></tr></table></figure></p>
+<p>   释1：相当于 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const add = function(num1,num2) &#123;</span><br><span class="line">return num1 + num2</span><br><span class="line">   &#125;</span><br><span class="line">      </span><br></pre></td></tr></table></figure></p>
+<p>   注：1、箭头函数是匿名函数，不能作为构造函数，不能使用new<br>      2、箭头函数不绑定arguments，取而代之用rest参数…解决<br>      3、箭头函数不绑定this，会捕获其所在的上下文的this值，作为自己的this值<br>      4、箭头函数通过 call() 或 apply() 方法调用一个函数时，只传入了一个参数，对 this 并没有影响。<br>      5、箭头函数没有原型属性<br>      6、箭头函数不能当做Generator函数,不能使用yield关键字</p>
+<p>4、数组与对象的解构<br>    例1： <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let arr = [5,6]</span><br><span class="line">console.log((...arr))</span><br><span class="line">   console.log([1,2,3,...arr])</span><br><span class="line">   </span><br></pre></td></tr></table></figure><br>    释1： <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">5，6</span><br><span class="line">1，2，3，5，6</span><br><span class="line">   </span><br></pre></td></tr></table></figure><br>    例2: <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">const key = &apos;job&apos;</span><br><span class="line">const obj = &#123;</span><br><span class="line">   	key,</span><br><span class="line">      num:1,</span><br><span class="line">      str:&apos;mieba&apos;,</span><br><span class="line">      work()&#123;&#125;,</span><br><span class="line">      [key]:&apos;fe&apos;,</span><br><span class="line">      [key+&apos;work&apos;]:&apos;fe&apos;</span><br><span class="line">   &#125;</span><br><span class="line">   </span><br></pre></td></tr></table></figure><br>    释2:  key 相当于 key = key,<br>         [key] ：’fe’ 相当于 job ：fe<br>         [key+’’] ：’fe’ 相当于 jobwork ：fe<br>    例3: <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let arr = [1,2]</span><br><span class="line">let [num1,num2] = arr</span><br><span class="line">   </span><br></pre></td></tr></table></figure><br>    释3: 相当于 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let num1 = arr[1]</span><br><span class="line">let num2 = arr[2]</span><br><span class="line">      </span><br></pre></td></tr></table></figure><br>    例4: <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const obj = &#123;type:&apos;IT&apos;,name = &apos;work&apos;&#125;</span><br><span class="line">const &#123;type,name&#125; = obj</span><br><span class="line">   </span><br></pre></td></tr></table></figure><br>    释4: 相当于 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const name = &apos;work&apos;</span><br><span class="line">const type = &apos;IT&apos;</span><br><span class="line">      </span><br></pre></td></tr></table></figure></p>
+<p> 5、模块化</p>
 
       
 
