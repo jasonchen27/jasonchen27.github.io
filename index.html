@@ -153,68 +153,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-vue笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/17/vue笔记/">vue笔记</a>
-    </h1>
-  
-
-        
-        <a href="/2018/08/17/vue笔记/" class="archive-article-date">
-  	<time datetime="2018-08-17T05:27:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/08/17/vue笔记/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-小程序笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -368,11 +306,37 @@ age 18
 <p>4.mounted</p>
 <p>　　在mounted之前还是通过进行占位的，因为此时还有挂载到页面上，还是JavaScript中的虚拟DOM形式存在的。在mounted之后可以看到内容发生了变化。<br>　　<br>5.beforeUpdate钩子函数和updated钩子函数间的生命周期</p>
 <p>　　当vue发现data中的数据发生了改变，会触发对应组件的重新渲染，先后调用beforeUpdate和updated钩子函数。<br>　　<br>6.beforeDestroy和destroyed钩子函数间的生命周期</p>
-<p>　　beforeDestroy钩子函数在实例销毁之前调用。在这一步，实例仍然完全可用。<br>　　destroyed钩子函数在Vue 实例销毁后调用。调用后，Vue 实例指示的所有东西都会解除绑定，所有的事件监听器会被移除，所有的子实例也会被销毁。<br>　　<br>(生命周期总结来自<a href="https://segmentfault.com/a/1190000011381906" target="_blank" rel="noopener">https://segmentfault.com/a/1190000011381906</a> ,作者fsrookie)<br><br></p>
+<p>　　beforeDestroy钩子函数在实例销毁之前调用。在这一步，实例仍然完全可用。<br>　　destroyed钩子函数在Vue 实例销毁后调用。调用后，Vue 实例指示的所有东西都会解除绑定，所有的事件监听器会被移除，所有的子实例也会被销毁。<br>　　<br>(生命周期总结摘自<a href="https://segmentfault.com/a/1190000011381906" target="_blank" rel="noopener">https://segmentfault.com/a/1190000011381906</a> ,作者fsrookie)<br><br></p>
 <p style="text-align:center">附：vue状态管理</p>
 
-
-
+<blockquote>
+<p>Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式。它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化。</p>
+</blockquote>
+<p>实例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*store index.js*/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> Vuex <span class="keyword">from</span> <span class="string">'vuex'</span></span><br><span class="line"><span class="keyword">import</span> countModule <span class="keyword">from</span> <span class="string">'./module/countModule/'</span></span><br><span class="line"></span><br><span class="line">Vue.use(Vuex)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义一个状态管理容器</span></span><br><span class="line"><span class="keyword">let</span> store = <span class="keyword">new</span> Vuex.Store(&#123;</span><br><span class="line">  modules: &#123;</span><br><span class="line">    countModule</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> store</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*store countModule index.js*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义一个状态管理容器</span></span><br><span class="line"><span class="keyword">let</span> countModule = &#123;</span><br><span class="line">  state: &#123;</span><br><span class="line">    count: <span class="number">10086</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// state 中定义的所有状态，都必需也只能通过 mutations 中的方法来进行修改，</span></span><br><span class="line">  <span class="comment">// 在其它组件中通过调用此方法来间接地修改 state 中的状态</span></span><br><span class="line">  mutations: &#123;</span><br><span class="line">    add (state) &#123;</span><br><span class="line">      state.count++</span><br><span class="line">    &#125;,</span><br><span class="line">    del (state, params) &#123;</span><br><span class="line">      state.count -= params.step</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  getters: &#123;</span><br><span class="line">    filterCount (state) &#123;</span><br><span class="line">      <span class="keyword">return</span> state.count &gt; <span class="number">10088</span> ? <span class="number">10088</span> : state.count</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  actions: &#123;</span><br><span class="line">    dispatchDel (context, params) &#123;</span><br><span class="line">      setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        context.commit(<span class="string">'del'</span>, params)</span><br><span class="line">      &#125;, <span class="number">1000</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> countModule</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*src main.js*/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> Demo <span class="keyword">from</span> <span class="string">'./Demo'</span></span><br><span class="line"><span class="keyword">import</span> router <span class="keyword">from</span> <span class="string">'./router'</span></span><br><span class="line"><span class="keyword">import</span> store <span class="keyword">from</span> <span class="string">'./store'</span></span><br><span class="line"></span><br><span class="line">Vue.config.productionTip = <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#app'</span>,</span><br><span class="line">  router,</span><br><span class="line">  store,</span><br><span class="line">  components: &#123; Demo &#125;,</span><br><span class="line">  template: <span class="string">'&lt;Demo/&gt;'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*src Demo.vue*/</span></span><br><span class="line"></span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"mian"</span>&gt;</span><br><span class="line">      &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"btn-wrapper"</span>&gt;</span><br><span class="line">        &lt;button <span class="class"><span class="keyword">class</span></span>=<span class="string">"btn btn-primary"</span> @click=<span class="string">"delHandleClick(&#123;step: 6&#125;)"</span>&gt;-&lt;/button&gt;</span><br><span class="line">        &#123;&#123;count&#125;&#125;-&#123;&#123;filterCount&#125;&#125;</span><br><span class="line">        &lt;button <span class="class"><span class="keyword">class</span></span>=<span class="string">"btn btn-primary"</span> @click=<span class="string">"addHandleClick"</span>&gt;+&lt;/button&gt;</span><br><span class="line">      &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line">  &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">import</span> &#123;mapState, mapGetters, mapActions, mapMutations&#125; <span class="keyword">from</span> <span class="string">'vuex'</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  name: <span class="string">'Demo'</span>,</span><br><span class="line">  computed: &#123;</span><br><span class="line">    <span class="comment">// num () &#123;</span></span><br><span class="line">    <span class="comment">//   return this.$store.state.count</span></span><br><span class="line">    <span class="comment">// &#125;,</span></span><br><span class="line">    <span class="comment">// filterNum () &#123;</span></span><br><span class="line">    <span class="comment">//   return this.$store.getters.filterCount</span></span><br><span class="line">    <span class="comment">// &#125;</span></span><br><span class="line">    ...mapState(&#123;</span><br><span class="line">      count: <span class="function"><span class="params">state</span> =&gt;</span> state.countModule.count</span><br><span class="line">    &#125;),</span><br><span class="line">    ...mapGetters(&#123;<span class="attr">filterCount</span>: <span class="string">'filterCount'</span>&#125;)</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    <span class="comment">// delHandleClick () &#123;</span></span><br><span class="line">    <span class="comment">//   this.$store.dispatch('dispatchDel', &#123;</span></span><br><span class="line">    <span class="comment">//     step: 6</span></span><br><span class="line">    <span class="comment">//   &#125;)</span></span><br><span class="line">    <span class="comment">// &#125;,</span></span><br><span class="line">    <span class="comment">// addHandleClick () &#123;</span></span><br><span class="line">    <span class="comment">//   this.$store.commit('add')</span></span><br><span class="line">    <span class="comment">// &#125;</span></span><br><span class="line">    ...mapActions(&#123;</span><br><span class="line">      delHandleClick: <span class="string">'dispatchDel'</span></span><br><span class="line">    &#125;),</span><br><span class="line">    ...mapMutations(&#123;</span><br><span class="line">      addHandleClick: <span class="string">'add'</span></span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;style lang="stylus" scoped&gt;</span></span><br><span class="line"><span class="regexp">  .mian</span></span><br><span class="line"><span class="regexp">    display:flex</span></span><br><span class="line"><span class="regexp">    flex-direction:column</span></span><br><span class="line"><span class="regexp">    justify-content:center</span></span><br><span class="line"><span class="regexp">    width:100%</span></span><br><span class="line"><span class="regexp">    height:4rem</span></span><br><span class="line"><span class="regexp">    .btn-wrapper</span></span><br><span class="line"><span class="regexp">      margin:0 auto</span></span><br><span class="line"><span class="regexp">      .btn</span></span><br><span class="line"><span class="regexp">        width:1rem</span></span><br><span class="line"><span class="regexp">        height:.5rem</span></span><br><span class="line"><span class="regexp">        border-radius:.5rem</span></span><br><span class="line"><span class="regexp">      .btn-primary</span></span><br><span class="line"><span class="regexp">        background:indianred</span></span><br><span class="line"><span class="regexp">&lt;/</span>style&gt;</span><br></pre></td></tr></table></figure>
+<p>注：</p>
+<ul>
+<li>其它组件中通过 $store.state.count 来获取状态，通过 this.$stroe.commit() 方法来提交对应的方法名告诉 store 要执行 mutations 中的哪一个方法来修改状态。commit() 可以接收第二个参数，表示要传给 add() 方法的参数，参数可以是一个单纯的数字，字符串或者其它基本类型，也可以是一个对象</li>
+<li>如果我们在点击减按钮时要先去请求主个接口，请接口返回来后再去变更状态，此时我们就需要用到状态管理中的 actiions。通过actions 的 commit() 来提交 mutations。然后在其它组件中通过 dispatch() 方法来触发一个 actions 动作。</li>
+<li>不过有时候我们在一个组件中两个地方都使用到了这个 count 状态，但是需要给其中一个添加一个约束条件，比如大于10088 就不能再往上加了。这时我们就可以使用 getters 属性实现这个效果，这个 getters 属性相当于组件中的计算属性，如实例所示。</li>
+<li>辅助函数<blockquote>
+<p>辅助函数就是为了简单我们使用状态管理的操作，让代码看起来更加简洁。state、getters、actions、mutations 都会有自己相对的一个用于简化调用状态的函数 mapState、 mapGetters、mapActions、mapMutations。在使用它们之前，我们必需得先从 vuex 中引入它们。</p>
+</blockquote>
+</li>
+</ul>
+<p>以 mapState 为例:</p>
+<ol>
+<li>引用</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; mapState &#125; <span class="keyword">from</span> <span class="string">"vuex"</span>;</span><br></pre></td></tr></table></figure>
+<p>2.写法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 传对象方式</span></span><br><span class="line">computed: mapState(&#123;</span><br><span class="line">  <span class="comment">// 写法一</span></span><br><span class="line">  count: <span class="function"><span class="params">state</span> =&gt;</span> state.count</span><br><span class="line">  <span class="comment">// 写法二</span></span><br><span class="line">  count: <span class="string">"count"</span></span><br><span class="line">  <span class="comment">// 写法三</span></span><br><span class="line">  count(state) &#123;</span><br><span class="line">      <span class="keyword">return</span> state.count + <span class="number">100</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 传数组方式（数组的话就只有一种写法）</span></span><br><span class="line">  computed: mapState([<span class="string">"count"</span>])</span><br></pre></td></tr></table></figure>
+<ul>
+<li>模块化　需要在 store 目录下的 index.js 文件引入这个模块，也就是现在我们把 store/index.js 文件当作一个所有状态的入口，统一在这里引入所有的状态模块。不过把状态分割成模块后，我们在组件中调用状态的时候就需要带上模块名了。</li>
+</ul>
+<p>(vuex状态管理总结摘自<a href="http://yunkus.com/vue-vuex/" target="_blank" rel="noopener">http://yunkus.com/vue-vuex/</a> ,作者朝夕熊)</p>
 <h2 id="三、mpvue"><a href="#三、mpvue" class="headerlink" title="三、mpvue"></a>三、mpvue</h2><h4 id="1、要了解-2"><a href="#1、要了解-2" class="headerlink" title="1、要了解"></a>1、要了解</h4><blockquote>
 <p>mpvue是一个使用 Vue.js 开发小程序的前端框架,全称即Vue.js in mini program,从底层支持 Vue.js 语法和构建工具体系。</p>
 </blockquote>
