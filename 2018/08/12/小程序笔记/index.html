@@ -17,7 +17,12 @@
 <meta property="og:description" content="一、Es61、要了解 JavaScript 语言的下一代标准，使用babel语法转换器，支持低端浏览器。">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/images/vue_life_cycle.jpg">
-<meta property="og:updated_time" content="2018-09-06T07:09:42.498Z">
+<meta property="og:image" content="http://yoursite.com/images/xiaochengxu_jiegou.png">
+<meta property="og:image" content="http://yoursite.com/images/xiaochengxu_jiegou2.png">
+<meta property="og:image" content="http://yoursite.com/images/xiaochengxu_app.js.png">
+<meta property="og:image" content="http://yoursite.com/images/xiaochengxu_app.json.png">
+<meta property="og:image" content="http://yoursite.com/images/xiaochengxu_tabbar.png">
+<meta property="og:updated_time" content="2018-09-06T07:58:19.469Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="灭霸小程序项目笔记">
 <meta name="twitter:description" content="一、Es61、要了解 JavaScript 语言的下一代标准，使用babel语法转换器，支持低端浏览器。">
@@ -443,7 +448,83 @@ age 18
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* koa-demo application.js*/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> request = &#123;</span><br><span class="line">    get url() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.req.url</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> response = &#123;</span><br><span class="line">    get body() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>._body</span><br><span class="line">    &#125;,</span><br><span class="line">    set body(val) &#123;</span><br><span class="line">        <span class="keyword">this</span>._body = val</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> context = &#123;</span><br><span class="line">    get url()&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.request.url</span><br><span class="line">    &#125;,</span><br><span class="line">    get body()&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.response.body</span><br><span class="line">    &#125;,</span><br><span class="line">    set body(val)&#123;</span><br><span class="line">        <span class="keyword">this</span>.response.body = val</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Application</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>() &#123;</span><br><span class="line">        <span class="comment">// this.callback = () =&gt; &#123;&#125;</span></span><br><span class="line">        <span class="keyword">this</span>.context = context</span><br><span class="line">        <span class="keyword">this</span>.request = request</span><br><span class="line">        <span class="keyword">this</span>.response = response</span><br><span class="line">        <span class="keyword">this</span>.middlewares = []</span><br><span class="line">    &#125;</span><br><span class="line">    use(callback) &#123;</span><br><span class="line">        <span class="keyword">this</span>.middlewares.push(callback)</span><br><span class="line">        <span class="comment">// this.callback = callback</span></span><br><span class="line">    &#125;</span><br><span class="line">    compose (middlewares)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">context</span>)</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> dispatch(<span class="number">0</span>)</span><br><span class="line">            <span class="function"><span class="keyword">function</span> <span class="title">dispatch</span>(<span class="params">i</span>)</span>&#123;</span><br><span class="line">                <span class="keyword">let</span> fn = middlewares[i]</span><br><span class="line">                <span class="keyword">if</span>(!fn)&#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="built_in">Promise</span>.resolve()</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">return</span> <span class="built_in">Promise</span>.resolve(fn(context,<span class="function"><span class="keyword">function</span> <span class="title">next</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">                    <span class="keyword">return</span> dispatch(i+<span class="number">1</span>)</span><br><span class="line">                &#125;))</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    listen(...args) &#123;</span><br><span class="line">        <span class="keyword">const</span> server = http.createServer(<span class="keyword">async</span>(req, res) =&gt; &#123;</span><br><span class="line">            <span class="keyword">let</span> ctx = <span class="keyword">this</span>.createCtx(req,res)</span><br><span class="line">            <span class="keyword">const</span> fn = <span class="keyword">this</span>.compose(<span class="keyword">this</span>.middlewares)</span><br><span class="line">            <span class="keyword">await</span> fn(ctx)</span><br><span class="line">            ctx.res.end(ctx.body)</span><br><span class="line">            <span class="comment">// this.callback(req, res)</span></span><br><span class="line">        &#125;)</span><br><span class="line">        server.listen(...args)</span><br><span class="line">    &#125;</span><br><span class="line">    createCtx(req, res)&#123;</span><br><span class="line">        <span class="keyword">let</span> ctx = <span class="built_in">Object</span>.create(<span class="keyword">this</span>.context)</span><br><span class="line">        ctx.request = <span class="built_in">Object</span>.create(<span class="keyword">this</span>.request)</span><br><span class="line">        ctx.response = <span class="built_in">Object</span>.create(<span class="keyword">this</span>.response)</span><br><span class="line">        ctx.req = ctx.request.req = req</span><br><span class="line">        ctx.res = ctx.response.res = res</span><br><span class="line">        <span class="keyword">return</span> ctx</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">module</span>.exports = Application</span><br></pre></td></tr></table></figure>
 <pre><code>在目录执行node server.js
 运行结果为3542
-</code></pre>
+</code></pre><p><br></p>
+<h2 id="五、小程序"><a href="#五、小程序" class="headerlink" title="五、小程序"></a>五、小程序</h2><h4 id="1、文件结构"><a href="#1、文件结构" class="headerlink" title="1、文件结构"></a>1、文件结构</h4><ul>
+<li>App.json配置文件</li>
+<li>wxml模版+wxss样式</li>
+<li>Js页面渲染，数据驱动页面</li>
+</ul>
+<p><img src="/images/xiaochengxu_jiegou.png" alt="小程序文件结构"></p>
+<p><img src="/images/xiaochengxu_jiegou2.png" alt="小程序文件结构"></p>
+<h6 id="i、App-js"><a href="#i、App-js" class="headerlink" title="i、App.js"></a>i、App.js</h6><blockquote>
+<p>项目全局的入口和配置</p>
+</blockquote>
+<ul>
+<li>生命周期</li>
+<li>全局getApp函数获取实例</li>
+<li>全局维一</li>
+</ul>
+<p><img src="/images/xiaochengxu_app.js.png" alt="小程序文件结构"></p>
+<h6 id="ii、App-json"><a href="#ii、App-json" class="headerlink" title="ii、App.json"></a>ii、App.json</h6><blockquote>
+<p>项目全局的入口和配置</p>
+</blockquote>
+<ul>
+<li>pages</li>
+<li>windws</li>
+<li>tabbar</li>
+</ul>
+<p><img src="/images/xiaochengxu_app.json.png" alt="小程序文件结构"></p>
+<p><img src="/images/xiaochengxu_tabbar.png" alt="小程序文件结构"></p>
+<h6 id="iii、wxml-wxss"><a href="#iii、wxml-wxss" class="headerlink" title="iii、wxml+wxss"></a>iii、wxml+wxss</h6><blockquote>
+<p>类似于html+css</p>
+</blockquote>
+<ul>
+<li>wxml类似html，数据驱动</li>
+<li>wxss样式，新增单位rpx(宽度750rpx满屏 自适应)</li>
+<li>配置文件，覆盖app.json里的window 比如修改title</li>
+</ul>
+<h6 id="iv、js"><a href="#iv、js" class="headerlink" title="iv、js"></a>iv、js</h6><blockquote>
+<p>自带数据驱动功能</p>
+</blockquote>
+<ul>
+<li>{ {显示数据} }</li>
+<li>setData，数据驱动不用深究，我们后期用vue语法开发</li>
+<li>自带组件和API</li>
+</ul>
+<h4 id="2、API"><a href="#2、API" class="headerlink" title="2、API"></a>2、API</h4><blockquote>
+<p>框架提供很多api，方便调用微信原生的能力</p>
+</blockquote>
+<ul>
+<li>Wx.request发送请求</li>
+<li>Wx.previewImage预览图片</li>
+<li>Wx.setStorage|getStorage 本地存储</li>
+<li>Location地理位置</li>
+<li>ScanCode扫码</li>
+<li>showToast显示提示信息</li>
+<li>设置导航条</li>
+<li>获取用户信息</li>
+<li>页面导航navigateTo,redirectTo,switchTab</li>
+<li>…</li>
+<li>动画、振动、截屏，亮度</li>
+<li>音乐、视频、地图、文件</li>
+<li>加速计 罗盘 wifi nfc等等</li>
+</ul>
+<h4 id="3、小程序自带组件"><a href="#3、小程序自带组件" class="headerlink" title="3、小程序自带组件"></a>3、小程序自带组件</h4><blockquote>
+<p>提供了一些基础组件，也可以自定义组件</p>
+</blockquote>
+<ul>
+<li>视图</li>
+<li>表单</li>
+<li>媒体</li>
+</ul>
+<p>注(小程序语法缺点)：</p>
+<ul>
+<li>不能使用npm，使用第三方包的方式太原始</li>
+<li>需要为小程序单独开发代码，不能和web系统重用</li>
+<li>开发效率和学习成本（小程序特有的语法）</li>
+<li>所以使用mpvue好处多多，^_^</li>
+</ul>
+
       
 
       
