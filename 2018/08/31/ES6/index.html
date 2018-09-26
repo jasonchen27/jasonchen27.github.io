@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018/8 | 轮子风很酷</title>
+  <title>ES6 | 轮子风很酷</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="Json&#39;s blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="轮子风很酷">
-<meta property="og:url" content="http://yoursite.com/archives/2018/08/index.html">
+  <meta name="description" content="一、开发环境1、babel(编译 ES6 语法) 电脑有 node 环境，运行 npm init npm install –save-dev babel-core babel-preset-es2015 babel-preset-latest 创建 .babelrc 文件 npm install –global babel-cli babel —version 创建 index.js 运行 bab">
+<meta name="keywords" content="Json&#39;s blog">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES6">
+<meta property="og:url" content="http://yoursite.com/2018/08/31/ES6/index.html">
 <meta property="og:site_name" content="轮子风很酷">
+<meta property="og:description" content="一、开发环境1、babel(编译 ES6 语法) 电脑有 node 环境，运行 npm init npm install –save-dev babel-core babel-preset-es2015 babel-preset-latest 创建 .babelrc 文件 npm install –global babel-cli babel —version 创建 index.js 运行 bab">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-09-26T07:37:33.622Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="轮子风很酷">
+<meta name="twitter:title" content="ES6">
+<meta name="twitter:description" content="一、开发环境1、babel(编译 ES6 语法) 电脑有 node 环境，运行 npm init npm install –save-dev babel-core babel-preset-es2015 babel-preset-latest 创建 .babelrc 文件 npm install –global babel-cli babel —version 创建 index.js 运行 bab">
   
     <link rel="alternative" href="/atom.xml" title="轮子风很酷" type="application/atom+xml">
   
@@ -151,157 +155,207 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-ES6" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      ES6
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/31/ES6/" class="archive-article-date">
+
+        
+        <a href="/2018/08/31/ES6/" class="archive-article-date">
   	<time datetime="2018-08-31T00:34:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-31</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/31/ES6/">ES6</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、开发环境"><a href="#一、开发环境" class="headerlink" title="一、开发环境"></a>一、开发环境</h2><h4 id="1、babel-编译-ES6-语法"><a href="#1、babel-编译-ES6-语法" class="headerlink" title="1、babel(编译 ES6 语法)"></a>1、babel(编译 ES6 语法)</h4><ul>
+<li>电脑有 node 环境，运行 npm init</li>
+<li>npm install –save-dev babel-core babel-preset-es2015 babel-preset-latest</li>
+<li>创建 .babelrc 文件</li>
+<li>npm install –global babel-cli</li>
+<li>babel —version</li>
+<li>创建 index.js</li>
+<li>运行 babel index.js</li>
+</ul>
+<a id="more"></a>
+<h4 id="2、webpack-模块化"><a href="#2、webpack-模块化" class="headerlink" title="2、webpack(模块化)"></a>2、webpack(模块化)</h4><ul>
+<li>npm install webpack babel-loader –save-dev</li>
+<li>配置 webpack.config.js</li>
+<li>配置 package.json 中的 scripts</li>
+<li>运行 npm start</li>
+</ul>
+<h2 id="二、模块化"><a href="#二、模块化" class="headerlink" title="二、模块化"></a>二、模块化</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*util1.js*/</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    a: <span class="number">100</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*util2.js*/</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    alert(<span class="string">'fn1'</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">fn2</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    alert(<span class="string">'fn2'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*index.js*/</span></span><br><span class="line"><span class="keyword">import</span> util1 <span class="keyword">from</span> <span class="string">'./util1.js'</span></span><br><span class="line"><span class="keyword">import</span> &#123;fn1, fn2&#125; <span class="keyword">from</span> <span class="string">'./util2.js'</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(util1)</span><br><span class="line">fn1()</span><br><span class="line">fn2()</span><br></pre></td></tr></table></figure>
+<h2 id="三、Class语法"><a href="#三、Class语法" class="headerlink" title="三、Class语法"></a>三、Class语法</h2><h4 id="1、构造函数和Class语法"><a href="#1、构造函数和Class语法" class="headerlink" title="1、构造函数和Class语法"></a>1、构造函数和Class语法</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 构造函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">MathHandel</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.x = x</span><br><span class="line">    <span class="keyword">this</span>.y = y</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">MathHandel.prototype.add = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.x + <span class="keyword">this</span>.y</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> m = <span class="keyword">new</span> MathHandel(<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line"><span class="built_in">console</span>.log(m.add())</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Class 语法</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MathHandel</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(x, y) &#123;</span><br><span class="line">        <span class="keyword">this</span>.x = x</span><br><span class="line">        <span class="keyword">this</span>.y = y</span><br><span class="line">    &#125;</span><br><span class="line">    add() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.x + <span class="keyword">this</span>.y</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> m = <span class="keyword">new</span> MathHandel(<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line"><span class="built_in">console</span>.log(m.add())</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> MathHandel) <span class="comment">//function</span></span><br><span class="line"><span class="built_in">console</span>.log(MathHandel.prototype.constructor === MathHandel) <span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(m.__proto__ === MathHandel.prototype) <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<h4 id="2、继承"><a href="#2、继承" class="headerlink" title="2、继承"></a>2、继承</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 构造函数实现继承</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Animal</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.eat = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        alert(<span class="string">'animal eat'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Dog</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.bark = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        alert(<span class="string">'dog bark'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Dog.prototype = <span class="keyword">new</span> Animal()</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> hashiq = <span class="keyword">new</span> Dog()</span><br><span class="line">hashiq.bark()</span><br><span class="line">hashiq.eat()</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Class语法实现继承</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(name) &#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name</span><br><span class="line">    &#125;</span><br><span class="line">    eat() &#123;</span><br><span class="line">        alert(<span class="keyword">this</span>.name + <span class="string">'eat'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span> <span class="keyword">extends</span> <span class="title">Animal</span></span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(name) &#123;</span><br><span class="line">        <span class="keyword">super</span>(name)</span><br><span class="line">        <span class="keyword">this</span>.name = name</span><br><span class="line">    &#125;</span><br><span class="line">    say() &#123;</span><br><span class="line">        alert(<span class="keyword">this</span>.name + <span class="string">'say'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> dog = <span class="keyword">new</span> Dog(<span class="string">'哈士奇'</span>)</span><br><span class="line">dog.say()</span><br><span class="line">dog.eat()</span><br></pre></td></tr></table></figure>
+<p>注：</p>
+<ul>
+<li>Class 在语法上更加贴合面向对象的写法</li>
+<li>Class 实现继承更加易读、易理解</li>
+<li>更易于写 java 等后端语言的使用</li>
+<li>本质还是语法糖，使用 prototype</li>
+</ul>
+<h2 id="四、Promise"><a href="#四、Promise" class="headerlink" title="四、Promise"></a>四、Promise</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">loadImg</span>(<span class="params">src, callback, fail</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> img = <span class="built_in">document</span>.createElement(<span class="string">'img'</span>)</span><br><span class="line">    img.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        callback(img)</span><br><span class="line">    &#125;</span><br><span class="line">    img.onerror = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        fail()</span><br><span class="line">    &#125;</span><br><span class="line">    img.src = src</span><br><span class="line">    <span class="built_in">document</span>.body.appendChild(img)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> src = <span class="string">'https://avatars3.githubusercontent.com/u/42384842?s=460&amp;v=4'</span></span><br><span class="line">loadImg(src, <span class="function"><span class="keyword">function</span> (<span class="params">img</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(img.width)</span><br><span class="line">&#125;,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'failed'</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">loadImg</span>(<span class="params">src</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> promise = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span> (<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> img = <span class="built_in">document</span>.createElement(<span class="string">'img'</span>)</span><br><span class="line">        img.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            resolve(img)</span><br><span class="line">            <span class="built_in">document</span>.body.appendChild(img)</span><br><span class="line">        &#125;</span><br><span class="line">        img.onerror = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            reject()</span><br><span class="line">        &#125;</span><br><span class="line">        img.src = src</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">return</span> promise</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> src = <span class="string">'https://avatars3.githubusercontent.com/u/42384842?s=460&amp;v=4'</span></span><br><span class="line"><span class="keyword">var</span> result = loadImg(src)</span><br><span class="line">result.then(<span class="function"><span class="keyword">function</span> (<span class="params">img</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(img.width)</span><br><span class="line">&#125;,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'failed'</span>)</span><br><span class="line">&#125;)</span><br><span class="line">result.then(<span class="function"><span class="keyword">function</span> (<span class="params">img</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(img.height)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//async-await</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">'babel-polyfill'</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">loadImg</span>(<span class="params">src</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> promise = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span> (<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> img = <span class="built_in">document</span>.createElement(<span class="string">'img'</span>)</span><br><span class="line">        <span class="comment">//语法错误会 throw new Error('自定义错误')</span></span><br><span class="line">        img.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            resolve(img)</span><br><span class="line">        &#125;</span><br><span class="line">        img.onerror = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            reject(<span class="string">'图片加载失败'</span>)</span><br><span class="line">        &#125;</span><br><span class="line">        img.src = src</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">return</span> promise</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> src1 = <span class="string">'https://avatars3.githubusercontent.com/u/42384842?s=460&amp;v=4'</span></span><br><span class="line"><span class="keyword">var</span> src2 = <span class="string">'https://jasonchencc.github.io/images/favicon.png'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> load = <span class="keyword">async</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> result1 = <span class="keyword">await</span> loadImg(src1)</span><br><span class="line">    <span class="built_in">console</span>.log(result1)</span><br><span class="line">    <span class="keyword">const</span> result2 = <span class="keyword">await</span> loadImg(src2)</span><br><span class="line">    <span class="built_in">console</span>.log(result2)</span><br><span class="line">&#125;</span><br><span class="line">load()</span><br></pre></td></tr></table></figure>
+<p>注：</p>
+<ul>
+<li>new Promise 实例，而且要 return</li>
+<li>new Promise 时要传入函数，函数有 resolve reject 两个参数</li>
+<li>成功时执行 resolve() 失败时执行 reject()</li>
+<li>then 监听结果</li>
+</ul>
+<h2 id="五、其他"><a href="#五、其他" class="headerlink" title="五、其他"></a>五、其他</h2><h4 id="1、let-const"><a href="#1、let-const" class="headerlink" title="1、let/const"></a>1、let/const</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//ES6</span></span><br><span class="line"><span class="keyword">let</span> i = <span class="number">10</span></span><br><span class="line">i = <span class="number">100</span></span><br><span class="line"><span class="keyword">const</span> j = <span class="number">20</span></span><br><span class="line">j = <span class="number">200</span>  <span class="comment">//报错</span></span><br></pre></td></tr></table></figure>
+<h4 id="2、多行字符串-模板变量"><a href="#2、多行字符串-模板变量" class="headerlink" title="2、多行字符串/模板变量"></a>2、多行字符串/模板变量</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">'zhangsan'</span>,age = <span class="number">20</span>,hmtl = <span class="string">''</span> ;</span><br><span class="line">html += <span class="string">'&lt;div&gt;'</span>;</span><br><span class="line">html += <span class="string">'&lt;p&gt;'</span>+ name + <span class="string">'&lt;/p&gt;'</span>;</span><br><span class="line">html += <span class="string">'&lt;p&gt;'</span>+ age + <span class="string">'&lt;/p&gt;'</span>;</span><br><span class="line">html += <span class="string">'&lt;/div&gt;'</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//ES6</span></span><br><span class="line"><span class="keyword">const</span> name = <span class="string">'zhangsan'</span>,age = <span class="number">20</span></span><br><span class="line"><span class="keyword">const</span> html = <span class="string">`</span></span><br><span class="line"><span class="string">        &lt;div&gt;</span></span><br><span class="line"><span class="string">            &lt;p&gt;<span class="subst">$&#123;name&#125;</span>&lt;/p&gt;</span></span><br><span class="line"><span class="string">            &lt;p&gt;<span class="subst">$&#123;age&#125;</span>&lt;/p&gt;</span></span><br><span class="line"><span class="string">        &lt;/div&gt;</span></span><br><span class="line"><span class="string">    `</span></span><br></pre></td></tr></table></figure>
+<h4 id="3、解构赋值"><a href="#3、解构赋值" class="headerlink" title="3、解构赋值"></a>3、解构赋值</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;<span class="attr">a</span>: <span class="number">100</span>, <span class="attr">b</span>: <span class="number">200</span>&#125;</span><br><span class="line"><span class="keyword">var</span> a = obj.a</span><br><span class="line"><span class="keyword">var</span> b =obj.b</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="string">'x'</span>, <span class="string">'y'</span>, <span class="string">'z'</span>]</span><br><span class="line"><span class="keyword">var</span> x = arr[<span class="number">0</span>]</span><br><span class="line"><span class="keyword">var</span> y = arr[<span class="number">1</span>]</span><br><span class="line"><span class="keyword">var</span> z = arr[<span class="number">2</span>]</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//ES6</span></span><br><span class="line"><span class="keyword">const</span> obj = &#123;<span class="attr">a</span>: <span class="number">100</span>, <span class="attr">b</span>: <span class="number">200</span>&#125;</span><br><span class="line"><span class="keyword">const</span> &#123;a, b&#125; = obj</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> arr = [<span class="string">'x'</span>, <span class="string">'y'</span>, <span class="string">'z'</span>]</span><br><span class="line"><span class="keyword">const</span> [x, y, z] = arr</span><br></pre></td></tr></table></figure>
+<h4 id="4、块级作用域"><a href="#4、块级作用域" class="headerlink" title="4、块级作用域"></a>4、块级作用域</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;<span class="attr">a</span>: <span class="number">100</span>, <span class="attr">b</span>: <span class="number">200</span>&#125;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> item <span class="keyword">in</span> obj) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(item)</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(item) <span class="comment">//item变量会外泄漏</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//ES6</span></span><br><span class="line"><span class="keyword">const</span> obj = &#123;<span class="attr">a</span>: <span class="number">100</span>, <span class="attr">b</span>: <span class="number">200</span>&#125;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> item <span class="keyword">in</span> obj) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(item)</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(item) <span class="comment">//undefined</span></span><br></pre></td></tr></table></figure>
+<h4 id="5、函数默认参数"><a href="#5、函数默认参数" class="headerlink" title="5、函数默认参数"></a>5、函数默认参数</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(b == <span class="literal">null</span>) &#123;</span><br><span class="line">        b = <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//ES6</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">a, b = <span class="number">0</span></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="6、箭头函数"><a href="#6、箭头函数" class="headerlink" title="6、箭头函数"></a>6、箭头函数</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line">arr.map(<span class="function"><span class="keyword">function</span> (<span class="params">item</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> item + <span class="number">1</span>;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//ES6</span></span><br><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">arr.map(<span class="function"><span class="params">item</span> =&gt;</span> item + <span class="number">1</span>)</span><br><span class="line">arr.map(<span class="function">(<span class="params">item, index</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(item)</span><br><span class="line">    <span class="keyword">return</span> item + <span class="number">1</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="7、箭头函数this"><a href="#7、箭头函数this" class="headerlink" title="7、箭头函数this"></a>7、箭头函数this</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'real'</span>, <span class="keyword">this</span>)  <span class="comment">//&#123;a: 100&#125;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">    arr.map(<span class="function"><span class="keyword">function</span> (<span class="params">item</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>)  <span class="comment">//window</span></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line">fn.call(&#123;<span class="attr">a</span>: <span class="number">100</span>&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//ES6</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'real'</span>, <span class="keyword">this</span>)  <span class="comment">//&#123;a: 100&#125;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">    arr.map(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>)  <span class="comment">//&#123;a: 100&#125;</span></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line">fn.call(&#123;<span class="attr">a</span>: <span class="number">100</span>&#125;)</span><br></pre></td></tr></table></figure>
+      
 
-        <div class="article-info info-on-right">
-          
-          
-
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/08/31/ES6/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/30/H5、CSS3总结/" class="archive-article-date">
-  	<time datetime="2018-08-30T11:25:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-30</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/08/30/H5、CSS3总结/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">H5、CSS3总结</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/30/H5、CSS3总结/">H5、CSS3总结</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/29/前端实践总结/" class="archive-article-date">
-  	<time datetime="2018-08-29T13:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/29/前端实践总结/">前端实践总结</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/22/Vue基础和Api/" class="archive-article-date">
-  	<time datetime="2018-08-22T02:50:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/22/Vue基础和Api/">Vue基础和Api</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/12/小程序笔记/" class="archive-article-date">
-  	<time datetime="2018-08-12T05:37:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/12/小程序笔记/">灭霸小程序项目笔记</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -325,8 +379,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
