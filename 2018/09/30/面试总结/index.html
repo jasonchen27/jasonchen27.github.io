@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="轮子风很酷">
 <meta property="og:description" content="一、让div水平垂直居中1、position 元素已知宽度1234567891011121314151617181920&amp;lt;div class=&quot;box&quot;&amp;gt;    &amp;lt;div class=&quot;content&quot;&amp;gt;    &amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;.box &amp;#123;    background-color: #FF8C00;    width: 300px;">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-30T09:32:44.211Z">
+<meta property="og:updated_time" content="2018-09-30T09:35:46.502Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试总结">
 <meta name="twitter:description" content="一、让div水平垂直居中1、position 元素已知宽度1234567891011121314151617181920&amp;lt;div class=&quot;box&quot;&amp;gt;    &amp;lt;div class=&quot;content&quot;&amp;gt;    &amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;.box &amp;#123;    background-color: #FF8C00;    width: 300px;">
@@ -195,7 +195,7 @@
 <h2 id="二、一个页面访问一个url的不同参数，页面和数据没变化，问题在哪？"><a href="#二、一个页面访问一个url的不同参数，页面和数据没变化，问题在哪？" class="headerlink" title="二、一个页面访问一个url的不同参数，页面和数据没变化，问题在哪？"></a>二、一个页面访问一个url的不同参数，页面和数据没变化，问题在哪？</h2><p>注： 目前还不太懂，估计是：</p>
 <ul>
 <li>这个组件被<code>&lt;keep-alive&gt;&lt;/keep-alive&gt;</code>了，有缓存。</li>
-<li>url多次请求同一个url(参数也相同)，那么可能不会返回数据。</li>
+<li>url多次请求同一个url(参数也相同)，那么可能不会返回数据,后面加上 <code>&amp;t=&#39;+new Date().getTime()</code> 。</li>
 </ul>
 
       
