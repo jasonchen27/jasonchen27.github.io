@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="轮子风很酷">
 <meta property="og:description" content="一、jquery和zepto对原型的使用1234567var $p = $(&apos;p&apos;)        $p.css(&apos;font-size&apos;, &apos;40px&apos;)  // css是原型方法        alert($p.html())  // html是原型方法        var $div1 = $(&apos;#div1&apos;)        $div1.css(&apos;color&apos;, &apos;blue&apos;)  // css">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-26T08:24:09.034Z">
+<meta property="og:updated_time" content="2018-10-16T15:36:33.298Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="原型">
 <meta name="twitter:description" content="一、jquery和zepto对原型的使用1234567var $p = $(&apos;p&apos;)        $p.css(&apos;font-size&apos;, &apos;40px&apos;)  // css是原型方法        alert($p.html())  // html是原型方法        var $div1 = $(&apos;#div1&apos;)        $div1.css(&apos;color&apos;, &apos;blue&apos;)  // css">
@@ -186,7 +186,15 @@
 <li>只有 $ 会暴露在 window 全局变量</li>
 <li>将插件扩展统一到 $.fn.xxx 这一个接口，方便使用</li>
 </ul>
-
+<!--PC和WAP自适应版-->
+<p><div id="SOHUCS"></div></p>
+<script type="text/javascript">
+(function(){
+var appid = 'cytS0hhjH';
+var conf = 'prod_0381601ea26549afa4e4e09834c482ea';
+var width = window.innerWidth || document.documentElement.clientWidth;
+if (width < 960) {
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
       
 
       
