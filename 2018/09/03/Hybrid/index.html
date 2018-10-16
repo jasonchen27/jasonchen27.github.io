@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="轮子风很酷">
 <meta property="og:description" content="一、对hybrid的理解1、解释 hybrid 即“混合”，即前端和客户端的混合开发 需前端开发人员和客户端开发人员配合完成 某些环节也可能涉及到 server 端 前端也需了解客户端的知识  2、hybrid的存在价值 可以快速迭代更新，无需 app 审核(关键) 体验流畅（和 NA 的体验基本类似） 减少开发和沟通成本，双端公用一套代码">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-27T04:07:47.710Z">
+<meta property="og:updated_time" content="2018-10-16T15:29:28.158Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hybrid">
 <meta name="twitter:description" content="一、对hybrid的理解1、解释 hybrid 即“混合”，即前端和客户端的混合开发 需前端开发人员和客户端开发人员配合完成 某些环节也可能涉及到 server 端 前端也需了解客户端的知识  2、hybrid的存在价值 可以快速迭代更新，无需 app 审核(关键) 体验流畅（和 NA 的体验基本类似） 减少开发和沟通成本，双端公用一套代码">
@@ -248,7 +248,15 @@
 <li>本地加载，免去网络加载的时间，更快。</li>
 <li>本地加载，没有网络请求，黑客看不到 schema 协议，更安全</li>
 </ul>
-
+<!--PC和WAP自适应版-->
+<p><div id="SOHUCS"></div></p>
+<script type="text/javascript">
+(function(){
+var appid = 'cytS0hhjH';
+var conf = 'prod_0381601ea26549afa4e4e09834c482ea';
+var width = window.innerWidth || document.documentElement.clientWidth;
+if (width < 960) {
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
       
 
       
