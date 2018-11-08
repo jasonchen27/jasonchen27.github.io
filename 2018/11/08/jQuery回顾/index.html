@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018 | 轮子风很酷</title>
+  <title>jQuery回顾 | 轮子风很酷</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="Json&#39;s blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="轮子风很酷">
-<meta property="og:url" content="http://yoursite.com/archives/2018/index.html">
+  <meta name="description" content="一、jQuery选择器1、选择器基本过滤选择器：  $(‘div:first’) ———— 选取所有div元素中第一个div元素 $(‘div:last’) ———— 选取所有div元素中最后一个div元素 $(‘input:not(.myClass)’) ———— 选取class不是myClass的input元素 $(‘input:even’) ———— 选取索引是偶数的input元素 $(‘i">
+<meta name="keywords" content="Json&#39;s blog">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery回顾">
+<meta property="og:url" content="http://yoursite.com/2018/11/08/jQuery回顾/index.html">
 <meta property="og:site_name" content="轮子风很酷">
+<meta property="og:description" content="一、jQuery选择器1、选择器基本过滤选择器：  $(‘div:first’) ———— 选取所有div元素中第一个div元素 $(‘div:last’) ———— 选取所有div元素中最后一个div元素 $(‘input:not(.myClass)’) ———— 选取class不是myClass的input元素 $(‘input:even’) ———— 选取索引是偶数的input元素 $(‘i">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-11-08T15:13:23.155Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="轮子风很酷">
+<meta name="twitter:title" content="jQuery回顾">
+<meta name="twitter:description" content="一、jQuery选择器1、选择器基本过滤选择器：  $(‘div:first’) ———— 选取所有div元素中第一个div元素 $(‘div:last’) ———— 选取所有div元素中最后一个div元素 $(‘input:not(.myClass)’) ———— 选取class不是myClass的input元素 $(‘input:even’) ———— 选取索引是偶数的input元素 $(‘i">
   
     <link rel="alternative" href="/atom.xml" title="轮子风很酷" type="application/atom+xml">
   
@@ -151,295 +155,220 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-jQuery回顾" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      jQuery回顾
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/08/jQuery回顾/" class="archive-article-date">
+
+        
+        <a href="/2018/11/08/jQuery回顾/" class="archive-article-date">
   	<time datetime="2018-11-08T15:12:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-08</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/08/jQuery回顾/">jQuery回顾</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、jQuery选择器"><a href="#一、jQuery选择器" class="headerlink" title="一、jQuery选择器"></a>一、jQuery选择器</h2><h4 id="1、选择器"><a href="#1、选择器" class="headerlink" title="1、选择器"></a>1、选择器</h4><p>基本过滤选择器：</p>
+<ul>
+<li>$(‘div:first’) ———— 选取所有div元素中第一个div元素</li>
+<li>$(‘div:last’) ———— 选取所有div元素中最后一个div元素</li>
+<li>$(‘input:not(.myClass)’) ———— 选取class不是myClass的input元素</li>
+<li>$(‘input:even’) ———— 选取索引是偶数的input元素</li>
+<li>$(‘input:odd’) ———— 选取索引是奇数的input元素</li>
+<li>$(‘input:eq(1)’) ———— 选取索引等于1的input元素</li>
+<li>$(‘input:gt(1)’) ———— 选取索引大于1的input元素</li>
+<li>$(‘input:lt(1)’) ———— 选取索引小于1的input元素</li>
+<li>$(‘:header’) ———— 选取网页中所有的h1，h2，h3</li>
+<li>$(‘div:animated’) ———— 选取正在执行动画的div元素</li>
+<li>$(‘:focus’) ———— 选取当前获取焦点的元素</li>
+</ul>
+<a id="more"></a>
+<p>内容过滤选择器：</p>
+<ul>
+<li>:contains(text) ———— 选取含有文本内容为text的元素</li>
+<li>:empty ———— 选取不包含子元素或者文本的空元素</li>
+<li>:has(selector) ———— 选取含有选择器所匹配的元素的元素</li>
+<li>:parent ———— 选取含有子元素或者文本的元素</li>
+</ul>
+<p>可见性过滤选择器：</p>
+<ul>
+<li>:hidden ———— 选取所有不可见的元素</li>
+<li>:visible ———— 选取所有可见的元素</li>
+</ul>
+<p>属性过滤选择器：</p>
+<ul>
+<li>[attr] ———— 选取拥有此属性的元素</li>
+<li>[attr=value] ————— 选取属性值为value的元素</li>
+<li>[attr!=value] ———— 选取属性的值不等于value的元素</li>
+<li>[attr^=value] ———— 选取属性的值以value开始的元素</li>
+<li>[attr*=value] ———— 选取属性的值以value结束的元素</li>
+<li>[attr|=value] ———— 选取属性的值含有value的元素</li>
+<li>[attr~=value] ———— 选取属性用空格分隔的值中包含value的元素</li>
+<li>[attr1][attr2][attr3] ———— 用属性选择器合并成一个复合属性选择器，满足多个条件。每选择一次，缩小一次范围。</li>
+</ul>
+<p>子元素过滤器：</p>
+<ul>
+<li>:nth-child(index/even/odd/3n+1) ———— 选取每个父元素下的第index个元素或者奇偶元素(index从1算起)</li>
+<li>:first-child ———— 选取每个父元素的第一个元素</li>
+<li>:last-child ———— 选取每个父元素的最后一个元素</li>
+<li>:only-child ———— 如果某个元素是它父元素中唯一的子元素，那么将会被匹配。如果父元素中含有其他元素，则不会被匹配。</li>
+</ul>
+<p>表单对象属性过滤选择器：</p>
+<ul>
+<li>:enabled ———— 选取所有可用元素</li>
+<li>:disabled ———— 选取所有不可用元素</li>
+<li>:checked ———— 选取所有被选中的元素(单选框，复选框)</li>
+<li>:selected ———— 选取所有被选中的选项元素(下拉列表)</li>
+</ul>
+<p>表单选择器：</p>
+<ul>
+<li>:input ———— 选取所有的input，textarea，select，button元素</li>
+<li>:text ———— 选取所有的单行文本框</li>
+<li>:password ———— 选取所有的密码框</li>
+<li>:radio ———— 选取所有的单选框</li>
+<li>:checkbox ———— 选取所有的多选框</li>
+<li>:submit ———— 选取所有的提交按钮</li>
+<li>:image ———— 选取所有的图像按钮</li>
+<li>:reset ———— 选取所有的重置按钮</li>
+<li>:button ———— 选取所有的按钮</li>
+<li>:file ———— 选取所有的上传域</li>
+<li>:hidden ———— 选取所有的不可见元素</li>
+</ul>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/11/08/jQuery回顾/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/02/flex布局/" class="archive-article-date">
-  	<time datetime="2018-10-02T04:49:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-02</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/10/02/flex布局/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Flex布局</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/02/flex布局/">Flex布局</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/03/Hybrid/" class="archive-article-date">
-  	<time datetime="2018-09-03T14:44:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/03/Hybrid/">Hybrid</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/03/组件化/" class="archive-article-date">
-  	<time datetime="2018-09-03T12:37:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/03/组件化/">组件化</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/02/MVVM/" class="archive-article-date">
-  	<time datetime="2018-09-02T10:22:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/02/MVVM/">MVVM</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/01/vdom/" class="archive-article-date">
-  	<time datetime="2018-09-01T10:07:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/01/vdom/">vdom</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/31/异步/" class="archive-article-date">
-  	<time datetime="2018-08-31T08:29:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-31</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/31/异步/">异步</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/31/原型/" class="archive-article-date">
-  	<time datetime="2018-08-31T02:02:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-31</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/31/原型/">原型</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/31/ES6/" class="archive-article-date">
-  	<time datetime="2018-08-31T00:34:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-31</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/31/ES6/">ES6</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/30/H5、CSS3总结/" class="archive-article-date">
-  	<time datetime="2018-08-30T11:25:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/30/H5、CSS3总结/">H5、CSS3总结</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2018/page/2/">2</a><a class="extend next" rel="next" href="/archives/2018/page/2/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -464,8 +393,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
