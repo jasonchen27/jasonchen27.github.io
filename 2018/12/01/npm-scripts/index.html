@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018 | 轮子风很酷</title>
+  <title>npm scripts | 轮子风很酷</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="Json&#39;s blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="轮子风很酷">
-<meta property="og:url" content="http://yoursite.com/archives/2018/page/2/index.html">
+  <meta name="description" content="一、为何使用 npm Scripts 近来直接使用node package提供的命令行界面的情绪持续高涨，反之，人们对通过运行任务从而屏蔽抽象功能的热情逐渐降温。在一定程度是，你无论如何都要使用npm，而同时npm提供了脚本功能，为什么不用呢？可能我们使用npm的脚本功能的原因有很多。以下会帮助我们理解这样做的原因，并确切的告诉我们如何通过这种方式来完成前端构建过程中的大部分重要任务。">
+<meta name="keywords" content="Json&#39;s blog">
+<meta property="og:type" content="article">
+<meta property="og:title" content="npm scripts">
+<meta property="og:url" content="http://yoursite.com/2018/12/01/npm-scripts/index.html">
 <meta property="og:site_name" content="轮子风很酷">
+<meta property="og:description" content="一、为何使用 npm Scripts 近来直接使用node package提供的命令行界面的情绪持续高涨，反之，人们对通过运行任务从而屏蔽抽象功能的热情逐渐降温。在一定程度是，你无论如何都要使用npm，而同时npm提供了脚本功能，为什么不用呢？可能我们使用npm的脚本功能的原因有很多。以下会帮助我们理解这样做的原因，并确切的告诉我们如何通过这种方式来完成前端构建过程中的大部分重要任务。">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-12-01T16:04:27.240Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="轮子风很酷">
+<meta name="twitter:title" content="npm scripts">
+<meta name="twitter:description" content="一、为何使用 npm Scripts 近来直接使用node package提供的命令行界面的情绪持续高涨，反之，人们对通过运行任务从而屏蔽抽象功能的热情逐渐降温。在一定程度是，你无论如何都要使用npm，而同时npm提供了脚本功能，为什么不用呢？可能我们使用npm的脚本功能的原因有很多。以下会帮助我们理解这样做的原因，并确切的告诉我们如何通过这种方式来完成前端构建过程中的大部分重要任务。">
   
     <link rel="alternative" href="/atom.xml" title="轮子风很酷" type="application/atom+xml">
   
@@ -151,133 +155,254 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-npm-scripts" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      npm scripts
+    </h1>
+  
+
+        
+        <a href="/2018/12/01/npm-scripts/" class="archive-article-date">
+  	<time datetime="2018-12-01T15:18:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-01</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、为何使用-npm-Scripts"><a href="#一、为何使用-npm-Scripts" class="headerlink" title="一、为何使用 npm Scripts"></a>一、为何使用 npm Scripts</h2><blockquote>
+<p>近来直接使用node package提供的命令行界面的情绪持续高涨，反之，人们对通过运行任务从而屏蔽抽象功能的热情逐渐降温。在一定程度是，你无论如何都要使用npm，而同时npm提供了脚本功能，为什么不用呢？可能我们使用npm的脚本功能的原因有很多。以下会帮助我们理解这样做的原因，并确切的告诉我们如何通过这种方式来完成前端构建过程中的大部分重要任务。</p>
+</blockquote>
+<a id="more"></a>
+<ul>
+<li>在这之前，我们使用Gulp，再之前是 Grunt。 Gulp和Grunt很好用，他们高效的自动完成了很多我之前需要手动完成的工作，帮助我更快的工作。但是个人觉得在这些工具上花费的精力要比花在写代码上的精力多得多。</li>
+<li>Grunt, Gulp, Broccoli, Brunch和类似的工具都需要将自己的任务配置的适合他们的范型和结构，这些工具每一个都需要学习他们不同的语法、奇怪的用法和特有的方法。这增加了编码复杂度、构建复杂度，使得你关注修复工具问题更甚于写代码。</li>
+<li>由于这些构建工具依赖于包装了核心命令行工具的插件，并基于这个核心工具做了进一步的抽象，这使得出错的情况变得更加复杂。<ul>
+<li>如果当前的命令行工具中没有你想用的插件，那么你将束手无策（除非你自己写一个）。</li>
+<li>你要用的插件包装了旧版的工具，所以使用的插件和当前核心工具的特性、文档不能够完全匹配一致。</li>
+<li>错误提示不够友好。如果插件挂了的话，很可能没法一路追踪这个错误直到核心工具，这时我很沮丧的发现自己并不清楚如何debug这个错误。</li>
+</ul>
+</li>
+</ul>
+<p>但是，请记住…<br>如果你对当前的构建系统很满意，并且它能够很好的完成你的需求的话，就请继续使用吧！不要因为npm scripts越来越流行就盲目的使用它，应该把精力集中在写代码而不是学习更多的工具。如果你开始觉得自己正在和使用的工具战斗，那么这个时候建议你考虑使用一下npm scripts。</p>
+<p>写npm scripts我们会花费大量的时间在<code>package.json</code>文件上。以下文件描述了我们需要的所有的依赖和脚本：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"name"</span>: <span class="string">"npm-build-boilerplate"</span>,</span><br><span class="line">  <span class="string">"version"</span>: <span class="string">"1.0.0"</span>,</span><br><span class="line">  <span class="string">"scripts"</span>: &#123;</span><br><span class="line">    ...</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">"devDependencies"</span>: &#123;</span><br><span class="line">    ...</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>接下来我们将逐步创建<code>package.json</code>文件。我们的脚本会写入scripts对象中，所有我们要使用的工具都会被安装并且写入devDependencies对象中。</p>
+<h2 id="二、编写-npm-scripts"><a href="#二、编写-npm-scripts" class="headerlink" title="二、编写 npm scripts"></a>二、编写 npm scripts</h2><h4 id="1、编译scss为css"><a href="#1、编译scss为css" class="headerlink" title="1、编译scss为css"></a>1、编译scss为css</h4><p>SCSS的重度用户，平时工作都依赖SCSS。为了将SCSS编译成CSS，我使用了node-sass。首先，我们需要安装node-sass，在命令行下运行以下代码：</p>
+<p><code>npm install --save-dev node-sass</code></p>
+<p>这个命令会在当前目录下安装node-sass，并添加到<code>package.json</code>的devDependencies对象中。当其他人使用你的项目时会非常方便，因为他们已经有了运行项目所需的所有内容。只要安装过一次，使用时在命令行运行以下代码即可：</p>
+<p><code>node-sass --output-style compressed -o dist/css src/scss</code></p>
+<p>让我们看一下这个命令做了什么：从后向前看，查找<code>src/scss</code>目录的SCSS文件，输出（-o 标识）编译的CSS到<code>dist/css</code>目录，压缩输出文件（使用 –output-style 标识，设置选项值为”compressed”）。</p>
+<p>现在我们知道了在命令行中如何工作，那么让我们把它放到npm scirpt中。在<code>package.json</code>的scripts对象中添加如下内容:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">  <span class="string">"scss"</span>: <span class="string">"node-sass --output-style compressed -o dist/css src/scss"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>现在回到命令行并运行：</p>
+<p><code>npm run scss</code></p>
+<p>可以看到这样运行的输出结果和直接在命令行使用node-sass命令得到的结果一致。</p>
+<p>本文剩余部分创建的任何一个npm script，都可以像上例一样使用命令行运行,只要把你想要运行的任务名从scss替换成你想要的名字即可。</p>
+<p>你将看到，我们使用的很多命令行工具都有很多的配置项，你可以使用配置项来精确完成你想要做的工作。比如，这是node-sass的选项列表，以下展示了传多个配置项的配置方法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">   <span class="string">"scss"</span>: <span class="string">"node-sass --output-style nested --indent-type tab --indent-width 4 -o dist/css src/scss"</span></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2、使用PostCSS自动给CSS加前缀"><a href="#2、使用PostCSS自动给CSS加前缀" class="headerlink" title="2、使用PostCSS自动给CSS加前缀"></a>2、使用PostCSS自动给CSS加前缀</h4><p>我们已经能够把SCSS编译成CSS，现在我们希望通过Autoprefixer和PostCSS自动给CSS代码添加厂商前缀，我们可以通过空格分隔的方式从而同时安装多个模块：</p>
+<p><code>npm install --save-dev postcss-cli autoprefixer</code></p>
+<p>因为PostCSS默认不做任何事情，所以我们安装了两个模块。PostCSS依赖其他的插件来处理你提供的CSS，比如Autoprefixer。</p>
+<p>安装并保存必要工具到devDependencies后，在你的scripts对象中添加一个新任务:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">  ...</span><br><span class="line">  <span class="string">"autoprefixer"</span>: <span class="string">"postcss -u autoprefixer -r dist/css/*"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个任务的意思是：使用(-u标识符)Autoprefixer替换（-r标识符）<code>dist/css</code>目录下的所有<code>.css</code>文件，给他们添加厂商前缀代码。就是这样简单！想要修改默认浏览器前缀？只要给脚本添加如下代码即可:</p>
+<p><code>&quot;autoprefixer&quot;: &quot;postcss -u autoprefixer --autoprefixer.browsers &#39;&amp;gt; 5%, ie 9&#39; -r dist/css/*&quot;</code><br>再次申明，配置你自己的构建代码有很多选项可以使用：postcss-cli 和 autoprefixer。</p>
+<h4 id="3、JavaScript-代码检查"><a href="#3、JavaScript-代码检查" class="headerlink" title="3、JavaScript 代码检查"></a>3、JavaScript 代码检查</h4><p>对于写代码来说，保持标准格式和样式是非常重要的，它能够确保错误最小化并提高开发效率。”代码检查”帮助我们自动化的完成了这个工作，所以我们通过使用 eslint 来进行代码检查。</p>
+<p>再次如上文所述，安装eslint的包，这次让我们使用快捷方式:</p>
+<p><code>npm i -D eslint</code></p>
+<p>这和如下代码是一样的效果：</p>
+<p><code>npm install --save-dev eslint</code></p>
+<p>安装完成后，我们给eslint配置一些运行代码的基本规则。使用如下代码开始一个向导：</p>
+<p><code>eslint --init</code>  （注：这里直接使用会抛错eslint找不到，因为这种使用方法必须安装在全局，即通过 npm install i -g eslint方式安装）</p>
+<p>现在，让我们把代码风格检测任务添加到<code>package.json</code>的scripts对象中：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">  ...</span><br><span class="line">  <span class="string">"lint"</span>: <span class="string">"eslint src/js"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>它会查找<code>src/js</code>目录下的所有JavaScript文件，并根据刚才生成的规则进行代码检测。当然，你也可以详细配置各种规则。</p>
+<h4 id="4、混淆压缩JavaScript文件"><a href="#4、混淆压缩JavaScript文件" class="headerlink" title="4、混淆压缩JavaScript文件"></a>4、混淆压缩JavaScript文件</h4><p>让我们继续，下面我们需要使用uglify-js来混淆压缩JavaScript文件，首先需要安装uglify-js：</p>
+<p><code>npm i -D uglify-js</code></p>
+<p>然后我们可以在<code>package.json</code>里创建压缩混合任务：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">  ...</span><br><span class="line">  <span class="string">"uglify"</span>: <span class="string">"mkdir -p dist/js &amp;&amp; uglifyjs src/js/*.js -m -o dist/js/app.js"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>npm scripts的任务的本质是：可以重复执行的、命令行任务的快捷方式（别名），这也是npm scripts的优点之一。这就意味着你可以直接在脚本里使用标准命令行代码！这个任务使用了两个标准命令行特性：mkdir 和 &amp;&amp;。</p>
+<p>这个任务的第一部分“ mkdir -p dist/js ”：如果不存在目录（-p标识）就创建一个目录结构（mkdir），创建成功后执行uglifyjs命令。&amp;&amp;帮助你连接多个命令，如果前一个命令成功执行的话，就分别顺序执行剩余的命令。</p>
+<p>这个任务的第二部分告诉uglifyjs针对<code>src/js/</code>目录下的所有JS文件（<code>*.js</code>），使用”mangle”命令（-m 标识），输出结果到<code>dist/js/app.js</code>文件中。这里是uglifyjs工具的全部配置选项 list of options。</p>
+<p>让我们来更新一下uglify任务，创建一个<code>dist/js/app.js</code>的压缩版本，链接另外一个uglifyjs的命令并传参给”compress”（-c标识）。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">  ...</span><br><span class="line">  <span class="string">"uglify"</span>: <span class="string">"mkdir -p dist/js &amp;&amp; uglifyjs src/js/*.js -m -o dist/js/app.js &amp;&amp; uglifyjs src/js/*.js -m -c -o dist/js/app.min.js"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="5、压缩图片"><a href="#5、压缩图片" class="headerlink" title="5、压缩图片"></a>5、压缩图片</h4><p>下面我们将进行图片压缩的工作。根据httparchive.org的数据统计，网络上前1000名的网站平均页面大小为1.9M,其中图片占了1.1M。所以提高网页加载速度的其中一个好办法就是减小图片大小。</p>
+<p>安装 imagemin-cli:</p>
+<p><code>npm i -D imagemin-cli</code></p>
+<p>Imagemin非常棒，它可以压缩大多数图片类型，包括GIF、JPG、PNG和SVG。 使用如下代码可以将一整个文件夹的图片全部压缩：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">  ...</span><br><span class="line">  <span class="string">"imagemin"</span>: <span class="string">"imagemin src/images dist/images -p"</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个任务告诉imagemin找到并压缩<code>src/images</code>中的所有图片并输出到<code>dist/images</code>中。-p标志在允许的情况下将图片处理成渐进图片。更多配置可查看文档 all available options</p>
+<h4 id="6、SVG精灵（Sprites）"><a href="#6、SVG精灵（Sprites）" class="headerlink" title="6、SVG精灵（Sprites）"></a>6、SVG精灵（Sprites）</h4><p>关于SVG的讨论近年来逐渐火热，SVG有众多优点：在所有的设备上保持松散结构、可通过CSS编辑、对读屏软件友好。然而，SVG编辑软件经常会产生大量的冗余代码。幸运的是，svgo可以帮助你自动删除这些冗余信息（我们马上就会安装svgo）。</p>
+<p>接下来我们来安装svg-sprite-generator，用于自动处理并整合多个SVG文件为一个SVG文件</p>
+<p><code>npm i -D svgo svg-sprite-generator</code></p>
+<p>你现在应该已经熟悉了这个过程——添加一个任务在你的<code>package.json</code>scripts对象中：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">  ...</span><br><span class="line">  <span class="string">"icons"</span>: <span class="string">"svgo -f src/images/icons &amp;&amp; mkdir -p dist/images &amp;&amp; svg-sprite-generate -d src/images/icons -o dist/images/icons.svg"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注意icons任务通过两个&amp;&amp;引导符做了三件事情： 1.使用svgo传参一个SVG目录（-f标识），这个操作压缩了目录内的全部SVG文件；2.如果不存在’dist/images’目录则创建该目录（使用mkdir -p命令）；3.使用svg-sprite-generator，传参一个SVG目录（-d标识）以及输出处理后的SVG文件的目录路径名（-o标识）。</p>
+<h4 id="7、通过BrowserSync提供服务、自动监测并注入变更"><a href="#7、通过BrowserSync提供服务、自动监测并注入变更" class="headerlink" title="7、通过BrowserSync提供服务、自动监测并注入变更"></a>7、通过BrowserSync提供服务、自动监测并注入变更</h4><p>最后一个插件是BrowserSync，它可以做如下事情：启动一个本地服务，向连接的浏览器自动注入更新的文件，并同步浏览器的点击和滚动。安装并添加任务的代码如下：</p>
+<p><code>npm i -D browser-sync</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">  ...</span><br><span class="line">  <span class="string">"serve"</span>: <span class="string">"browser-sync start --server --files 'dist/css/*.css, dist/js/*.js'"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>BrowserSync任务默认使用当前根目录下的路径启动一个服务器（–server标识），–files标识告诉BrowserSync去监测<code>dist</code>目录的CSS或JS文件，一旦有任何变化，则自动向页面注入变化的文件。</p>
+<p>你可以同时打开多个浏览器（甚至在不同的设备上），他们都会实时更新文件变化的！</p>
+<h4 id="8、合并CSS任务"><a href="#8、合并CSS任务" class="headerlink" title="8、合并CSS任务"></a>8、合并CSS任务</h4><p>我们会添加一个新的任务，用于合并两个CSS相关的任务（处理SASS和执行加前缀的Autoprefixer），有了这个任务我们就不用分别执行两个相关任务了：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">  ...</span><br><span class="line">  <span class="string">"build:css"</span>: <span class="string">"npm run scss &amp;&amp; npm run autoprefixer"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当你运行npm run build:css时，这个任务会告诉命令行去执行npm run scss，当这个任务成功完成后，会接着（&amp;&amp;）执行 npm run autoprefixer。</p>
+<p>就像这个build:css任务一样，我们可以把JavaScript任务也链接到一起以方便执行。</p>
+<h4 id="9、合并JavaScript任务"><a href="#9、合并JavaScript任务" class="headerlink" title="9、合并JavaScript任务"></a>9、合并JavaScript任务</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">  ...</span><br><span class="line">  <span class="string">"build:js"</span>: <span class="string">"npm run lint &amp;&amp; npm run uglify"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>现在，我们可以通过npm run build:js一步调用，来进行代码检测、混淆压缩JavaScript代码了！</p>
+<h4 id="10、合并剩余任务"><a href="#10、合并剩余任务" class="headerlink" title="10、合并剩余任务"></a>10、合并剩余任务</h4><p>对于图片任务、其他剩余构建任务，我们可以用相同的方法把他们变成一个任务：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">  ...</span><br><span class="line">  <span class="string">"build:images"</span>: <span class="string">"npm run imagemin &amp;&amp; npm run icons"</span>,</span><br><span class="line">  <span class="string">"build:all"</span>: <span class="string">"npm run build:css &amp;&amp; npm run build:js &amp;&amp; npm run build:images"</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="11、变更监控"><a href="#11、变更监控" class="headerlink" title="11、变更监控"></a>11、变更监控</h4><p>至此，我们的任务不断的需要对文件做一些变更，我们不断的需要切回命令行去运行相应的任务。针对这个问题，我们可以添加一个任务来监听文件变更，让文件在变更的时候自动执行这些任务。这里我推荐使用onchange插件，安装方法如下：</p>
+<p><code>npm i -D onchange</code></p>
+<p>让我们来给CSS和JavaScript设置监控任务：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">  ...</span><br><span class="line">  <span class="string">"watch:css"</span>: <span class="string">"onchange 'src/scss/*.scss' -- npm run build:css"</span>,</span><br><span class="line">  <span class="string">"watch:js"</span>: <span class="string">"onchange 'src/js/*.js' -- npm run build:js"</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这些任务可以分解如下：onchange需要你传参想要监控的文件路径（字符串），这里我们传的是SCSS和JS源文件，我们想要运行的命令跟在–之后，这个命令当路径内的文件发生增删改的时候就会被立即执行。</p>
+<p>让我们再添加一个监控命令来完成我们的npm scripts构建过程。</p>
+<p>再添加一个包，parallelshell：</p>
+<p><code>npm i -D parallelshell</code></p>
+<p>再次给scriopts对象添加一个新任务：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">  ...</span><br><span class="line">  <span class="string">"watch:all"</span>: <span class="string">"parallelshell 'npm run serve' 'npm run watch:css' 'npm run watch:js'"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>parallelshell支持多个参数字符串，它会给npm run传多个任务用于执行。</p>
+<p>为什么时候parallelshell去合并多个任务，而不是像之前的任务一样使用&amp;&amp;呢？最开始我也尝试这么做了，但是问题是：&amp;&amp;链接多个命令到一块，需要等待每一个命令成功完成后才会执行下一个任务。然而当我们运行watch命令时，这些命令一直都不会结束！这样我们就会卡在一个无限循环里。</p>
+<p>因此，使用parallelshell使得我们可以同时执行多个watch命令。（译者注：后来在评论里有人推荐使用npm-run-all插件来代替parallelshell，它支持这种用法可以一次性检测全部watch任务更加方便：”watch”: “npm-run-all –parallel serve watch:*”）</p>
+<p>这个任务使用了BrowserSync的npm run serve任务启动了一个服务，然后对CSS和JavaScript文件执行了监控命令，一旦CSS或JavaScript文件有变更，监控任务就会执行相应的构建（build）任务。由于BrowserSync被设置成监控<code>dist</code>目录下的变更，所以它会自动的向相关联的URL内注入新的文件，真是太棒了！</p>
+<h4 id="12、其他实用任务"><a href="#12、其他实用任务" class="headerlink" title="12、其他实用任务"></a>12、其他实用任务</h4><p>npm有大量可以实用的插件（ots of baked in tasks ），让我们再添加一个新的任务来看看这些插件对构建脚本的影响：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">  ...</span><br><span class="line">  <span class="string">"postinstall"</span>: <span class="string">"npm run watch:all"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当你在命令行中执行npm install的时候postinstall会立即执行，当团队合作时这个功能非常有用。当别人复制了你的项目并运行了npm install的时候，我们的watch:all任务就会马上执行，别人马上就会准备好一切开发环境：启动一个服务、打开一个浏览器窗口、监控文件变更。</p>
+<p>原文地址： <a href="https://css-tricks.com/why-npm-scripts/" target="_blank" rel="noopener">https://css-tricks.com/why-npm-scripts/</a></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/30/H5、CSS3总结/" class="archive-article-date">
-  	<time datetime="2018-08-30T11:25:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/30/H5、CSS3总结/">H5、CSS3总结</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/12/01/npm-scripts/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/29/前端实践总结/" class="archive-article-date">
-  	<time datetime="2018-08-29T13:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-29</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/12/01/函数节流/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">函数节流以及在Vue中遇到的坑</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/29/前端实践总结/">前端实践总结</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/22/Vue基础和Api/" class="archive-article-date">
-  	<time datetime="2018-08-22T02:50:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/22/Vue基础和Api/">Vue基础和Api</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/12/小程序笔记/" class="archive-article-date">
-  	<time datetime="2018-08-12T05:37:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/12/小程序笔记/">灭霸小程序项目笔记</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2018/">&laquo; Prev</a><a class="page-number" href="/archives/2018/">1</a><span class="page-number current">2</span>
-    </nav>
   
 
 
@@ -302,8 +427,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
