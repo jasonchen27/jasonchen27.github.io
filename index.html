@@ -153,6 +153,80 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Vue项目优化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/24/Vue项目优化/">Vue项目优化</a>
+    </h1>
+  
+
+        
+        <a href="/2018/12/24/Vue项目优化/" class="archive-article-date">
+  	<time datetime="2018-12-23T16:40:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、基础优化"><a href="#一、基础优化" class="headerlink" title="一、基础优化"></a>一、基础优化</h2><blockquote>
+<p>所谓的基础优化是任何 web 项目都要做的，并且是问题的根源。HTML，CSS，JS 是第一步要优化的点分别对应到 .vue 文件内的<code>template</code>,<code>style</code>,<code>script</code></p>
+</blockquote>
+<h4 id="1、template"><a href="#1、template" class="headerlink" title="1、template"></a>1、template</h4><p>模板部分帮助我们展示结构化数据，vue 通过数据驱动视图，主要注意以下几点:</p>
+<ul>
+<li><p>v-show，v-if 用哪个？要分两个维度去思考问题，第一个维度是权限问题，只要涉及到权限相关的展示无疑要用 v-if，第二个维度在没有权限限制下根据用户点击的频次选择，频繁切换的使用 v-show，不频繁切换的使用 v-if，这里要说的优化点在于减少页面中 dom 总数，个人比较倾向于使用 v-if，因为减少了 dom 数量，加快首屏渲染，至于性能方面我感觉肉眼看不出来切换的渲染过程，也不会影响用户的体验。</p>
+</li>
+<li><p>不要在模板里面写过多的表达式与判断 <code>v-if=&quot;isShow &amp;&amp; isAdmin &amp;&amp; (a || b)&quot;</code>，这种表达式虽说可以识别，但是不是长久之计，当看着不舒服时，适当的写到 methods 和 computed 里面封装成一个方法，这样的好处是方便我们在多处判断相同的表达式，其他权限相同的元素再判断展示的时候调用同一个方法即可。</p>
+</li>
+<li><p>循环调用子组件时添加 key，key 可以唯一标识一个循环个体，可以使用例如 item.id 作为 key，假如数组数据是这样的 <code>[&#39;a&#39; , &#39;b&#39;, &#39;c&#39;, &#39;a&#39;]</code>,使用 <code>:key=&quot;item&quot;</code> 显然没有意义，更好的办法就是在循环的时候 <code>(item, index) in arr</code>，然后 <code>:key=&quot;index&quot;</code>来确保 <code>key</code> 的唯一性。</p>
+</li>
+</ul>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/12/24/Vue项目优化/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-npm-scripts" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -735,77 +809,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/08/31/原型/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-ES6" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/31/ES6/">ES6</a>
-    </h1>
-  
-
-        
-        <a href="/2018/08/31/ES6/" class="archive-article-date">
-  	<time datetime="2018-08-31T00:34:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-31</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一、开发环境"><a href="#一、开发环境" class="headerlink" title="一、开发环境"></a>一、开发环境</h2><h4 id="1、babel-编译-ES6-语法"><a href="#1、babel-编译-ES6-语法" class="headerlink" title="1、babel(编译 ES6 语法)"></a>1、babel(编译 ES6 语法)</h4><ul>
-<li>电脑有 node 环境，运行 npm init</li>
-<li>npm install –save-dev babel-core babel-preset-es2015 babel-preset-latest</li>
-<li>创建 .babelrc 文件</li>
-<li>npm install –global babel-cli</li>
-<li>babel —version</li>
-<li>创建 index.js</li>
-<li>运行 babel index.js</li>
-</ul>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/08/31/ES6/">展开全文 >></a>
         </p>
       
 
