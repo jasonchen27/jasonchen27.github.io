@@ -247,7 +247,7 @@
 <p>有人会质疑是不是没压缩或依赖包没去重，其实都做了就是看到的 1.4M。</p>
 <p>解决方法很简单，打包 vender 时不打包 vue、vuex、vue-router、axios 等，换用国内的 bootcdn 直接引入到根目录的 index.html 中。</p>
 <p>例如：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"//cdn.bootcss.com/vue/2.2.5/vue.min.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=<span class="string">"//cdn.bootcss.com/vue-router/2.3.0/vue-router.min.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=<span class="string">"//cdn.bootcss.com/vuex/2.2.1/vuex.min.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=<span class="string">"//cdn.bootcss.com/axios/0.15.3/axios.min.js"</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"//cdn.bootcss.com/vue/2.2.5/vue.min.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&lt;script src=<span class="string">"//cdn.bootcss.com/vue-router/2.3.0/vue-router.min.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&lt;script src=<span class="string">"//cdn.bootcss.com/vuex/2.2.1/vuex.min.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&lt;script src=<span class="string">"//cdn.bootcss.com/axios/0.15.3/axios.min.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 <p>在 webpack 里有个 externals，可以忽略不需要打包的库</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">externals: &#123;</span><br><span class="line">  <span class="string">'vue'</span>: <span class="string">'Vue'</span>,</span><br><span class="line">  <span class="string">'vue-router'</span>: <span class="string">'VueRouter'</span>,</span><br><span class="line">  <span class="string">'vuex'</span>: <span class="string">'Vuex'</span>,</span><br><span class="line">  <span class="string">'axios'</span>: <span class="string">'axios'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>此时的 vender 包会非常小，如果不够小还可以拆分其他的库，此时增加了请求的数量，但是远比加载一个 1.4M 的 bundle 快的多。</p>
@@ -344,6 +344,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2018/12/31/求一个字符串是否包含另一个字符串的算法/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          求一个字符串是否包含另一个字符串的算法
+        
+      </div>
+    </a>
   
   
     <a href="/2018/12/01/npm-scripts/" id="article-nav-older" class="article-nav-link-wrap">
