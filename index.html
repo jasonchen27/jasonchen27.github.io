@@ -153,6 +153,264 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-其实我们可以少写点if-else和switch" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/17/其实我们可以少写点if-else和switch/">其实我们可以少写点if else和switch</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/17/其实我们可以少写点if-else和switch/" class="archive-article-date">
+  	<time datetime="2019-02-17T09:32:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、最基本if-else"><a href="#一、最基本if-else" class="headerlink" title="一、最基本if-else"></a>一、最基本if-else</h2><p>假设有这么个场景,不同情况下打印不同值。 因为涉及到的条件太多，就不提三目运算之类优化了。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (a == <span class="number">1</span>) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'a1'</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (a == <span class="number">2</span>) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'b2'</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (a == <span class="number">3</span>) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'c3'</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (a == <span class="number">4</span>) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'d4'</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* n..... */</span></span><br></pre></td></tr></table></figure>
+<p>现在还算能看，因为逻辑简单，如果逻辑复杂，迭代多个版本之后，你还敢动吗。每动一下就战战兢兢，谁知道哪里会遗漏。 那么换种方式呢?</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/17/其实我们可以少写点if-else和switch/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Vue-源码中一些util函数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/17/Vue-源码中一些util函数/">Vue 源码中一些util函数</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/17/Vue-源码中一些util函数/" class="archive-article-date">
+  	<time datetime="2019-02-17T09:15:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="1、Object-prototype-toString-call-arg-和-String-arg-的区别？"><a href="#1、Object-prototype-toString-call-arg-和-String-arg-的区别？" class="headerlink" title="1、Object.prototype.toString.call(arg) 和 String(arg) 的区别？"></a>1、Object.prototype.toString.call(arg) 和 String(arg) 的区别？</h4><p>String(arg) 会尝试调用 arg.toString() 或者 arg.valueOf(), 所以如果arg或者arg的原型重写了这两个方法，Object.prototype.toString.call(arg) 和 String(arg) 的结果就不同</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> _toString = <span class="built_in">Object</span>.prototype.toString</span><br><span class="line"><span class="keyword">var</span> obj = &#123;&#125;</span><br><span class="line"></span><br><span class="line">obj.toString()  <span class="comment">// [object Object]</span></span><br><span class="line">_toString.call(obj) <span class="comment">// [object Object]</span></span><br><span class="line"></span><br><span class="line">obj.toString = <span class="function"><span class="params">()</span> =&gt;</span> <span class="string">'111'</span></span><br><span class="line"></span><br><span class="line">obj.toString()  <span class="comment">// 111</span></span><br><span class="line">_toString.call(obj) <span class="comment">// [object Object]</span></span><br><span class="line"></span><br><span class="line">/hello/.toString() <span class="comment">// /hello/</span></span><br><span class="line">_toString.call(<span class="regexp">/hello/</span>) <span class="comment">// [object RegExp]</span></span><br></pre></td></tr></table></figure>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/17/Vue-源码中一些util函数/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-在项目实践中用更优雅的方式处理数组问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/17/在项目实践中用更优雅的方式处理数组问题/">在项目实践中用更优雅的方式处理数组问题</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/17/在项目实践中用更优雅的方式处理数组问题/" class="archive-article-date">
+  	<time datetime="2019-02-17T09:05:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、使用Set处理数组去重和元素剔除问题"><a href="#一、使用Set处理数组去重和元素剔除问题" class="headerlink" title="一、使用Set处理数组去重和元素剔除问题"></a>一、使用Set处理数组去重和元素剔除问题</h2><h4 id="1、使用Set处理数组去重"><a href="#1、使用Set处理数组去重" class="headerlink" title="1、使用Set处理数组去重"></a>1、使用Set处理数组去重</h4><p>对于一个一维数组，我们可以先把它转化成Set，再配合…解构运算符重新转化为数组，达到去重的目的。请看例子</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">5</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> newArr = [...new <span class="built_in">Set</span>(arr)]</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(newArr)</span><br><span class="line"></span><br><span class="line"><span class="comment">// [1, 2, 3, 4, 5]</span></span><br></pre></td></tr></table></figure>
+<p>注：这个方法不能对元素为“对象”的数组奏效。</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/17/在项目实践中用更优雅的方式处理数组问题/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-js常用技巧" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/17/js常用技巧/">js常用技巧</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/17/js常用技巧/" class="archive-article-date">
+  	<time datetime="2019-02-17T08:46:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、函数"><a href="#一、函数" class="headerlink" title="一、函数"></a>一、函数</h2><h4 id="1、强制参数"><a href="#1、强制参数" class="headerlink" title="1、强制参数"></a>1、强制参数</h4><p>默认情况下，如果不向函数参数传值，那么JS 会将函数参数设置为undefined。其它一些语言则会发出警告或错误。要执行参数分配，可以使用if语句抛出未定义的错误，或者可以利用强制参数。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mandatory = <span class="function"><span class="params">( )</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'Missing parameter!'</span>);</span><br><span class="line">&#125;</span><br><span class="line">foo = <span class="function">(<span class="params">bar = mandatory( </span>)) =&gt;</span> &#123;            <span class="comment">// 这里如果不传入参数，就会执行manadatory函数报出错误</span></span><br><span class="line">  <span class="keyword">return</span> bar;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/17/js常用技巧/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-求一个字符串是否包含另一个字符串的算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -566,280 +824,6 @@
 
 
   
-    <article id="post-组件化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/03/组件化/">组件化</a>
-    </h1>
-  
-
-        
-        <a href="/2018/09/03/组件化/" class="archive-article-date">
-  	<time datetime="2018-09-03T12:37:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一、对组件化的理解"><a href="#一、对组件化的理解" class="headerlink" title="一、对组件化的理解"></a>一、对组件化的理解</h2><h4 id="1、组件的封装"><a href="#1、组件的封装" class="headerlink" title="1、组件的封装"></a>1、组件的封装</h4><ul>
-<li>视图</li>
-<li>数据</li>
-<li>变化逻辑（数据驱动视图变化）</li>
-</ul>
-<h4 id="2、组件的复用"><a href="#2、组件的复用" class="headerlink" title="2、组件的复用"></a>2、组件的复用</h4><ul>
-<li>props 传递</li>
-<li>复用</li>
-</ul>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/03/组件化/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-MVVM" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/02/MVVM/">MVVM</a>
-    </h1>
-  
-
-        
-        <a href="/2018/09/02/MVVM/" class="archive-article-date">
-  	<time datetime="2018-09-02T10:22:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一、理解-MVVM"><a href="#一、理解-MVVM" class="headerlink" title="一、理解 MVVM"></a>一、理解 MVVM</h2><h4 id="1、jquery和vue的不同"><a href="#1、jquery和vue的不同" class="headerlink" title="1、jquery和vue的不同"></a>1、jquery和vue的不同</h4><h6 id="i、-jQuery-实现-todo-list"><a href="#i、-jQuery-实现-todo-list" class="headerlink" title="i、 jQuery 实现 todo-list"></a>i、 jQuery 实现 todo-list</h6>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/02/MVVM/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-vdom" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/01/vdom/">vdom</a>
-    </h1>
-  
-
-        
-        <a href="/2018/09/01/vdom/" class="archive-article-date">
-  	<time datetime="2018-09-01T10:07:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一、理解-vdom"><a href="#一、理解-vdom" class="headerlink" title="一、理解 vdom"></a>一、理解 vdom</h2><h4 id="1、什么是-vdom"><a href="#1、什么是-vdom" class="headerlink" title="1、什么是 vdom"></a>1、什么是 vdom</h4><ul>
-<li>virtual dom ， 虚拟 DOM</li>
-<li>用 JS 模拟 DOM 结构</li>
-<li>DOM 变化的对比，放在 JS 层来做（图灵完备语言）</li>
-<li>提高重绘性能</li>
-</ul>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/01/vdom/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-异步" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/31/异步/">异步</a>
-    </h1>
-  
-
-        
-        <a href="/2018/08/31/异步/" class="archive-article-date">
-  	<time datetime="2018-08-31T08:29:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-31</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一、单线程"><a href="#一、单线程" class="headerlink" title="一、单线程"></a>一、单线程</h2><blockquote>
-<p>只有一个线程，只能做一件事</p>
-</blockquote>
-<h4 id="1、单线程原因：避免-DOM-渲染冲突"><a href="#1、单线程原因：避免-DOM-渲染冲突" class="headerlink" title="1、单线程原因：避免 DOM 渲染冲突"></a>1、单线程原因：避免 DOM 渲染冲突</h4><ul>
-<li>浏览器需要渲染 DOM</li>
-<li>JS 可以修改 DOM 结构</li>
-<li>JS 执行的时候，浏览器 DOM 渲染会暂停</li>
-<li>两段 JS 也不能同时执行（都修改 DOM 就冲突了）</li>
-<li>webworker 支持多线程，但是不能访问 DOM</li>
-</ul>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/08/31/异步/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -854,7 +838,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 Jason Chen
+    		&copy; 2019 Jason Chen
     	</div>
       	<div class="footer-right">
       		<a href="http://www.lovexixi.cn" target="_blank">个人专属博客 | Personal blog</a>
