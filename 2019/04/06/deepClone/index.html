@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | 轮子风很酷</title>
+  <title>deepClone | 轮子风很酷</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="Json&#39;s blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="轮子风很酷">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="一、深克隆的实现1、经典的 json 方法实现深克隆–&amp;gt;非完美解决方法12345678910111213141516171819202122232425262728293031function Person(name) &amp;#123;	this.name = name;&amp;#125;const Jack = new Person(&apos;Jack&apos;);const obj = &amp;#123;    a:">
+<meta name="keywords" content="Json&#39;s blog">
+<meta property="og:type" content="article">
+<meta property="og:title" content="deepClone">
+<meta property="og:url" content="http://yoursite.com/2019/04/06/deepClone/index.html">
 <meta property="og:site_name" content="轮子风很酷">
+<meta property="og:description" content="一、深克隆的实现1、经典的 json 方法实现深克隆–&amp;gt;非完美解决方法12345678910111213141516171819202122232425262728293031function Person(name) &amp;#123;	this.name = name;&amp;#125;const Jack = new Person(&apos;Jack&apos;);const obj = &amp;#123;    a:">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-06T04:35:46.213Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="轮子风很酷">
+<meta name="twitter:title" content="deepClone">
+<meta name="twitter:description" content="一、深克隆的实现1、经典的 json 方法实现深克隆–&amp;gt;非完美解决方法12345678910111213141516171819202122232425262728293031function Person(name) &amp;#123;	this.name = name;&amp;#125;const Jack = new Person(&apos;Jack&apos;);const obj = &amp;#123;    a:">
   
     <link rel="alternative" href="/atom.xml" title="轮子风很酷" type="application/atom+xml">
   
@@ -151,305 +155,194 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-deepClone" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/06/this关键字/" class="archive-article-date">
-  	<time datetime="2019-04-06T07:09:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-06</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/06/this关键字/">this关键字</a>
+    <h1 class="article-title" itemprop="name">
+      deepClone
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/06/JavaScript常用的简洁高级技巧/" class="archive-article-date">
-  	<time datetime="2019-04-06T06:42:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/06/JavaScript常用的简洁高级技巧/">JavaScript常用的简洁高级技巧</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/06/函数如何优雅的传参/" class="archive-article-date">
-  	<time datetime="2019-04-06T06:13:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/06/函数如何优雅的传参/">函数如何优雅的传参</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/06/递归注意事项/" class="archive-article-date">
-  	<time datetime="2019-04-06T05:08:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/06/递归注意事项/">递归</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/06/deepClone/" class="archive-article-date">
+        
+        <a href="/2019/04/06/deepClone/" class="archive-article-date">
   	<time datetime="2019-04-06T04:33:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-06</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/06/deepClone/">deepClone</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
+        
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/17/其实我们可以少写点if-else和switch/" class="archive-article-date">
-  	<time datetime="2019-02-17T09:32:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/17/其实我们可以少写点if-else和switch/">其实我们可以少写点if else和switch</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/17/Vue-源码中一些util函数/" class="archive-article-date">
-  	<time datetime="2019-02-17T09:15:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/17/Vue-源码中一些util函数/">Vue 源码中一些util函数</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/17/在项目实践中用更优雅的方式处理数组问题/" class="archive-article-date">
-  	<time datetime="2019-02-17T09:05:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/17/在项目实践中用更优雅的方式处理数组问题/">在项目实践中用更优雅的方式处理数组问题</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/17/js常用技巧/" class="archive-article-date">
-  	<time datetime="2019-02-17T08:46:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/17/js常用技巧/">js常用技巧</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
+    <div class="article-entry" itemprop="articleBody">
       
-        </div></section>
+        <h2 id="一、深克隆的实现"><a href="#一、深克隆的实现" class="headerlink" title="一、深克隆的实现"></a>一、深克隆的实现</h2><h4 id="1、经典的-json-方法实现深克隆–-gt-非完美解决方法"><a href="#1、经典的-json-方法实现深克隆–-gt-非完美解决方法" class="headerlink" title="1、经典的 json 方法实现深克隆–&gt;非完美解决方法"></a>1、经典的 json 方法实现深克隆–&gt;非完美解决方法</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> Jack = <span class="keyword">new</span> Person(<span class="string">'Jack'</span>);</span><br><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">    a: <span class="number">1</span>,</span><br><span class="line">    b: <span class="function"><span class="keyword">function</span> (<span class="params">arg</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'我是独一无二的，json复制不了我'</span>);</span><br><span class="line">    &#125;,</span><br><span class="line">    c: &#123;</span><br><span class="line">        d: <span class="number">3</span>,</span><br><span class="line">        e: &#123;</span><br><span class="line">            f: [<span class="number">1</span>,[<span class="number">2</span>,[<span class="number">3</span>,[<span class="number">4</span>,[<span class="number">5</span>]]]]],</span><br><span class="line">            g: &#123;</span><br><span class="line">                h: <span class="number">5</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    date: [<span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">1536627600000</span>), <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">1540047600000</span>)],</span><br><span class="line">    reg: <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">'\\w+'</span>),</span><br><span class="line">    num: [<span class="literal">NaN</span>, <span class="literal">Infinity</span>, -<span class="literal">Infinity</span>],</span><br><span class="line">    person: Jack,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//json方法克隆</span></span><br><span class="line"><span class="keyword">let</span> obj2 = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(obj));</span><br><span class="line"><span class="built_in">console</span>.log(obj);</span><br><span class="line"><span class="built_in">console</span>.log(obj2);</span><br><span class="line">obj.c.e.f = <span class="number">1000</span>;<span class="comment">//改变源对象的值</span></span><br><span class="line">obj2.c.e.g.h = <span class="number">2000</span>;<span class="comment">//改变克隆对象的值</span></span><br><span class="line"><span class="built_in">console</span>.log(obj.c.e.f, obj2.c.e.f);</span><br><span class="line"><span class="built_in">console</span>.log( obj.c.e.g.h, obj2.c.e.g.h);</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>json克隆有以下缺点：</p>
+<ul>
+<li>如果 obj 里面有时间对象（案例date），则 JSON.stringify 后再 JSON.parse 的结果，时间将只是字符串的形式。而不是时间对象。</li>
+<li>如果 obj 里有 RegExp、Error 对象（案例reg），则序列化的结果将只得到空对象。</li>
+<li>如果 obj 里有函数（案例b），undefined，则序列化的结果会把函数或 undefined 丢失。</li>
+<li>如果 obj 里有 NaN、Infinity 和 -Infinity，则序列化的结果会变成 null。</li>
+<li>JSON.stringify() 只能序列化对象的可枚举的自有属性，例如 如果 obj 中的对象（案例person）是有构造函数生成的， 则使用 JSON.parse(JSON.stringify(obj)) 深拷贝后，会丢弃对象的 constructor，所有的构造函数会指向 Object。</li>
+<li>如果对象中存在循环引用的情况也无法正确实现深拷贝 因此，我们可以得到结论：json 克隆的方法仅适用于简单数据类型的克隆或者仅携带简单数据的引用数据类型。</li>
+</ul>
+<h4 id="2、网络常见的实现深克隆的方法-–-gt-非完美解决方法"><a href="#2、网络常见的实现深克隆的方法-–-gt-非完美解决方法" class="headerlink" title="2、网络常见的实现深克隆的方法 –&gt;非完美解决方法"></a>2、网络常见的实现深克隆的方法 –&gt;非完美解决方法</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//数据初始化</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> Jack = <span class="keyword">new</span> Person(<span class="string">'Jack'</span>);</span><br><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">    a: <span class="number">1</span>,</span><br><span class="line">    b: <span class="function"><span class="keyword">function</span> (<span class="params">arg</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'复制我，你牛逼'</span>);</span><br><span class="line">    &#125;,</span><br><span class="line">    c: &#123;</span><br><span class="line">        d: <span class="number">3</span>,</span><br><span class="line">        e: &#123;</span><br><span class="line">            f: [<span class="number">1</span>,[<span class="number">2</span>,[<span class="number">3</span>,[<span class="number">4</span>,[<span class="number">5</span>]]]]],</span><br><span class="line">            g: &#123;</span><br><span class="line">                h: <span class="number">5</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    date: [<span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">1536627600000</span>), <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">1540047600000</span>)],</span><br><span class="line">    reg: <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">'\\w+'</span>),</span><br><span class="line">    num: [<span class="literal">NaN</span>, <span class="literal">Infinity</span>, -<span class="literal">Infinity</span>],</span><br><span class="line">    person: Jack,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//深克隆实现方法</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepClone</span>(<span class="params">origin, target</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> tar = target || &#123;&#125;;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> item <span class="keyword">in</span> origin) &#123;</span><br><span class="line">    	<span class="keyword">if</span> (origin.hasOwnProperty(item)) &#123;</span><br><span class="line">    		<span class="keyword">if</span> (<span class="keyword">typeof</span> origin[item] === <span class="string">'object'</span>) &#123;</span><br><span class="line">    			tar[item] = <span class="built_in">Object</span>.prototype.toString.call(origin[item]) === <span class="string">'[object Array]'</span> ? [] : &#123;&#125;;</span><br><span class="line">    			deepClone(origin[item], tar[item]);</span><br><span class="line">    		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    			tar[item] = origin[item];</span><br><span class="line">    		&#125;</span><br><span class="line">    	&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> tar;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//验证代码</span></span><br><span class="line"><span class="keyword">let</span> obj2 = deepClone(obj, &#123;&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(obj);</span><br><span class="line"><span class="built_in">console</span>.log(obj2);</span><br><span class="line">obj.c.e.f = <span class="number">1000</span>;</span><br><span class="line">obj2.c.e.g.h = <span class="number">2000</span>;</span><br><span class="line"><span class="built_in">console</span>.log(obj.c.e.f, obj2.c.e.f);</span><br><span class="line"><span class="built_in">console</span>.log( obj.c.e.g.h, obj2.c.e.g.h);</span><br></pre></td></tr></table></figure>
+<p>仍有不足：</p>
+<ul>
+<li>如果obj里面有时间对象（案例date），则得到结果，时间将只是空对象。</li>
+<li>如果obj里有RegExp、Error对象（案例reg），则序列化的结果将只得到空对象。</li>
+<li>如果obj中的对象（person）是有构造函数生成的， 则使用该深拷贝后，会丢弃对象的constructor。</li>
+</ul>
+<p>因此，该函数虽未能完美实现所有类型的深克隆，但对于日常开发足矣，日常开发一般只需要完成对象或数组的克隆，如不考虑时间对象、RegExp、Error对象和由构造函数生成的对象，该方法完全足够。</p>
+<h4 id="3、原生js实现深克隆-–-gt-完美解决方法一"><a href="#3、原生js实现深克隆-–-gt-完美解决方法一" class="headerlink" title="3、原生js实现深克隆 –&gt;完美解决方法一"></a>3、原生js实现深克隆 –&gt;完美解决方法一</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//数据初始化</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> Jack = <span class="keyword">new</span> Person(<span class="string">'Jack'</span>);</span><br><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">    a: <span class="number">1</span>,</span><br><span class="line">    b: <span class="function"><span class="keyword">function</span> (<span class="params">arg</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'复制我，你牛逼'</span>);</span><br><span class="line">    &#125;,</span><br><span class="line">    c: &#123;</span><br><span class="line">        d: <span class="number">3</span>,</span><br><span class="line">        e: &#123;</span><br><span class="line">            f: [<span class="number">1</span>,[<span class="number">2</span>,[<span class="number">3</span>,[<span class="number">4</span>,[<span class="number">5</span>]]]]],</span><br><span class="line">            g: &#123;</span><br><span class="line">                h: <span class="number">5</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    date: [<span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">1536627600000</span>), <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">1540047600000</span>)],</span><br><span class="line">    reg: <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">'\\w+'</span>),</span><br><span class="line">    num: [<span class="literal">NaN</span>, <span class="literal">Infinity</span>, -<span class="literal">Infinity</span>],</span><br><span class="line">    person: Jack,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//深克隆函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepClone</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">const</span> type = <span class="keyword">this</span>.judgeType(data);</span><br><span class="line">	<span class="keyword">let</span> obj;</span><br><span class="line">	<span class="keyword">if</span> (type === <span class="string">'Array'</span>) &#123;</span><br><span class="line">		obj = [];</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>, len = data.length; i &lt; len; i++ ) &#123;</span><br><span class="line">			obj.push(<span class="keyword">this</span>.deepClone(data[i]));</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; <span class="keyword">else</span> <span class="keyword">if</span> (type === <span class="string">'Object'</span>) &#123;</span><br><span class="line">		obj = <span class="keyword">new</span> data.constructor ();<span class="comment">//可保持继承链,解决该问题：如果obj中的对象是由构造函数生成的，则使用深拷贝后，会丢弃对象的constructor；</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">let</span> key <span class="keyword">in</span> data) &#123;</span><br><span class="line">			obj[key] = <span class="keyword">this</span>.deepClone(data[key]);<span class="comment">//实现深克隆的关键</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> data;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> obj;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//判断类型函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">judgeType</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (obj <span class="keyword">instanceof</span> Element) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">'element'</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">Object</span>.prototype.toString.call(obj).slice(<span class="number">8</span>,<span class="number">-1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//验证代码</span></span><br><span class="line"><span class="keyword">let</span> obj2 = deepClone(obj);</span><br><span class="line"><span class="built_in">console</span>.log(obj);</span><br><span class="line"><span class="built_in">console</span>.log(obj2);</span><br><span class="line">obj.c.e.f = <span class="number">1000</span>;</span><br><span class="line">obj2.c.e.g.h = <span class="number">2000</span>;</span><br><span class="line"><span class="built_in">console</span>.log(obj.c.e.f, obj2.c.e.f);</span><br><span class="line"><span class="built_in">console</span>.log( obj.c.e.g.h, obj2.c.e.g.h);</span><br></pre></td></tr></table></figure>
+<h4 id="4、原生js实现深克隆-–-gt-完美解决方法二"><a href="#4、原生js实现深克隆-–-gt-完美解决方法二" class="headerlink" title="4、原生js实现深克隆 –&gt;完美解决方法二"></a>4、原生js实现深克隆 –&gt;完美解决方法二</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//数据初始化</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> Jack = <span class="keyword">new</span> Person(<span class="string">'Jack'</span>);</span><br><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">    a: <span class="number">1</span>,</span><br><span class="line">    b: <span class="function"><span class="keyword">function</span> (<span class="params">arg</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'复制我，你牛逼'</span>);</span><br><span class="line">    &#125;,</span><br><span class="line">    c: &#123;</span><br><span class="line">        d: <span class="number">3</span>,</span><br><span class="line">        e: &#123;</span><br><span class="line">            f: [<span class="number">1</span>,[<span class="number">2</span>,[<span class="number">3</span>,[<span class="number">4</span>,[<span class="number">5</span>]]]]],</span><br><span class="line">            g: &#123;</span><br><span class="line">                h: <span class="number">5</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    date: [<span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">1536627600000</span>), <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">1540047600000</span>)],</span><br><span class="line">    reg: <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">'\\w+'</span>),</span><br><span class="line">    num: [<span class="literal">NaN</span>, <span class="literal">Infinity</span>, -<span class="literal">Infinity</span>],</span><br><span class="line">    person: Jack,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//深克隆函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepClone</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (obj === <span class="literal">null</span>) <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">	<span class="keyword">if</span> (<span class="keyword">typeof</span> obj !== <span class="string">'object'</span>) <span class="keyword">return</span> obj;</span><br><span class="line">	<span class="keyword">if</span> (obj.constructor === <span class="built_in">Date</span>) <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Date</span>(obj);</span><br><span class="line">	<span class="keyword">if</span> (obj.constructor === <span class="built_in">RegExp</span>) <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">RegExp</span>(obj);</span><br><span class="line">	<span class="keyword">const</span> newObj = <span class="keyword">new</span> obj.constructor ();  <span class="comment">//保持继承链</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">let</span> key <span class="keyword">in</span> obj) &#123;</span><br><span class="line">		<span class="keyword">if</span> (obj.hasOwnProperty(key)) &#123;   <span class="comment">//不遍历其原型链上的属性</span></span><br><span class="line">			<span class="keyword">const</span> val = obj[key];</span><br><span class="line">			newObj[key] = <span class="keyword">typeof</span> val === <span class="string">'object'</span> ? <span class="built_in">arguments</span>.callee(val) : val; <span class="comment">// 使用arguments.callee解除与函数名的耦合。</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> newObj;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//判断代码</span></span><br><span class="line"><span class="keyword">const</span> obj2 = deepClone(obj);</span><br><span class="line"><span class="built_in">console</span>.log(obj);</span><br><span class="line"><span class="built_in">console</span>.log(obj2);</span><br><span class="line">obj.c.e.f = <span class="number">1000</span>;</span><br><span class="line">obj2.c.e.g.h = <span class="number">2000</span>;</span><br><span class="line"><span class="built_in">console</span>.log(obj.c.e.f, obj2.c.e.f);</span><br><span class="line"><span class="built_in">console</span>.log( obj.c.e.g.h, obj2.c.e.g.h);</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/images/alipay.jpeg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/images/weixin_alipay.jpeg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/12/31/求一个字符串是否包含另一个字符串的算法/" class="archive-article-date">
-  	<time datetime="2018-12-31T08:23:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-31</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/12/31/求一个字符串是否包含另一个字符串的算法/">求一个字符串是否包含另一个字符串的算法</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/04/06/deepClone/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2019/04/06/递归注意事项/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          递归
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2019/02/17/其实我们可以少写点if-else和switch/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">其实我们可以少写点if else和switch</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/2/">Next &raquo;</a>
-    </nav>
+  
+
+  
+
   
 
 
@@ -474,8 +367,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
