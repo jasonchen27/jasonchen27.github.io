@@ -153,6 +153,77 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-vue-element-ui不兼容ie的坑" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/22/vue-element-ui不兼容ie的坑/">vue+element-ui不兼容ie的坑</a>
+    </h1>
+  
+
+        
+        <a href="/2019/06/22/vue-element-ui不兼容ie的坑/" class="archive-article-date">
+  	<time datetime="2019-06-22T07:41:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、vue项目在ie上报错"><a href="#一、vue项目在ie上报错" class="headerlink" title="一、vue项目在ie上报错"></a>一、vue项目在ie上报错</h2><p>vue项目打包后，在打包完成后的输出目录dist开启一个本地服务器，并修改代理地址到项目真实接口地址(http-server -p 服务器端口 -P 目标代理地址）。然后在ie浏览器上调试，进入主页面后会报出如下错误：<img src="/images/ie_wrong.png" alt="ie报错"></p>
+<p>可能原因：</p>
+<ul>
+<li>插件版本不对</li>
+<li>ie不识别ES6到promise语法</li>
+<li>js文件引入有问题</li>
+<li>babel插件转换没起作用</li>
+</ul>
+<p>检查项目后首先对第一、三种情况做了排除，其次考虑到ie不识别promise，引入了<code>es6-promise</code>插件后还是报错，所以错误定位在babel转换到问题，于是研究了下babel的使用方法、运行方式以及如何做对应的配置。</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/06/22/vue-element-ui不兼容ie的坑/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-this关键字" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -734,71 +805,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/02/17/js常用技巧/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-求一个字符串是否包含另一个字符串的算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/31/求一个字符串是否包含另一个字符串的算法/">求一个字符串是否包含另一个字符串的算法</a>
-    </h1>
-  
-
-        
-        <a href="/2018/12/31/求一个字符串是否包含另一个字符串的算法/" class="archive-article-date">
-  	<time datetime="2018-12-31T08:23:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-31</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>求一个字符串是否包含另一个字符串，可能想到的是用封装好的方法，比如String.indexOf(str)可以判断一个字符串是否包含另一个字符串，如不包含返回-1。现在如果不使用方法，怎么实现比较好呢？</p>
-</blockquote>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/12/31/求一个字符串是否包含另一个字符串的算法/">展开全文 >></a>
         </p>
       
 
