@@ -22,7 +22,7 @@
 <meta property="og:image" content="http://yoursite.com/images/prototype/prototype_2.jpg">
 <meta property="og:image" content="http://yoursite.com/images/prototype/prototype_4.jpg">
 <meta property="og:image" content="http://yoursite.com/images/prototype/prototype_5.jpg">
-<meta property="og:updated_time" content="2020-04-21T17:39:56.798Z">
+<meta property="og:updated_time" content="2020-04-21T17:41:18.148Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入JavaScript之原型链">
 <meta name="twitter:description" content="一、对象属性 ECMAScript中有两种属性：数据属性和访问器属性  1、数据属性 数据属性包含一个数据值的位置。在这个位置可以读取和写入值。  数据属性有4个描述其行为的特性：  [[Configurable]]：表示能否通过delete删除属性从而重新定义属性，能否修改属性的特性，或者能否把属性修改为访问器属性。默认值为true。 [[Enumerable]]：表示能否通过for-in循环返">
@@ -302,7 +302,7 @@
 </blockquote>
 <p>判断属性存在于对象中还是存在于原型中，如下所示：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hasPrototypeProperty</span>(<span class="params">object, name</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> !object.hasOwnProperty(name) &amp;&amp; (name <span class="keyword">in</span> object)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>由于in操作符只要通过对象能够访问到属性就返回true，hasOwnProperty()只在属性存在于实例中时才返回true，因此只要in操作符返回true2而hasOwnProperty()返回false，就可以确定属性时原型中的属性。</p>
+<p>由于in操作符只要通过对象能够访问到属性就返回true，hasOwnProperty()只在属性存在于实例中时才返回true，因此只要in操作符返回true而hasOwnProperty()返回false，就可以确定属性时原型中的属性。</p>
 <p>在使用for-in循环时，返回的是所有能够通过对象访问的、可枚举(enumerated)属性，其中既包括存在于实例中的属性，也包括存在于原型中的属性。屏蔽了原型中不可枚举属性（即将[[Enumerable]]标记为false的属性）的实例属性也会在for-in循环中返回哦，因为根据规定，所有开发人员定义的属性都是可枚举的——只有在IE8及更早版本中例外。</p>
 <p>要取得对象上所有可枚举的实例属性，可以使用<code>EMCMAScript5的Object.keys()</code>方法。这个方法接收一个对象作为参数，返回一个包含所有可枚举属性的字符串数组。</p>
 <p>如果想要得到所有实例属性，无论它是否可枚举，都可以使用<code>Object.getOwnPropertyNames()</code>方法。（结果包含了不可枚举的constructor属性）</p>
