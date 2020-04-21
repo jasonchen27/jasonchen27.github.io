@@ -173,6 +173,22 @@
     
     <div class="article-entry" itemprop="articleBody">
       
+        <h1 id="一、对象属性"><a href="#一、对象属性" class="headerlink" title="一、对象属性"></a>一、对象属性</h1><blockquote>
+<p>ECMAScript中有两种属性：数据属性和访问器属性</p>
+</blockquote>
+<h2 id="1、数据属性"><a href="#1、数据属性" class="headerlink" title="1、数据属性"></a>1、数据属性</h2><blockquote>
+<p>数据属性包含一个数据值的位置。在这个位置可以读取和写入值。</p>
+</blockquote>
+<p>数据属性有4个描述其行为的特性：</p>
+<ul>
+<li>[[Configurable]]：表示能否通过delete删除属性从而重新定义属性，能否修改属性的特性，或者能否把属性修改为访问器属性。默认值为true。</li>
+<li>[[Enumerable]]：表示能否通过<code>for-in</code>循环返回属性。默认值为true。</li>
+<li>[[Writable]]：表示能否修改属性对数据值。默认值为true。</li>
+<li>[[Value]]：包含这个属性的数据值。读取属性值的时候，从这个位置读；写入属性值的时候，把新值保存在这个位置。默认值为undefined。</li>
+</ul>
+<p>例如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  name: <span class="string">'Jason'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里创建了一个名为name的属性，值为“Jason”。也就是说[[Value]]特性将被设置为“Jason”，而[[Configurable]]、[[Enumerable]]、[[Writable]]特性默认被设置为true。</p>
         
       
 
