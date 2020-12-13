@@ -153,6 +153,83 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-设计模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/12/13/设计模式/">设计模式笔记</a>
+    </h1>
+  
+
+        
+        <a href="/2020/12/13/设计模式/" class="archive-article-date">
+  	<time datetime="2020-12-13T06:42:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、-单例模式"><a href="#一、-单例模式" class="headerlink" title="一、 单例模式"></a>一、 单例模式</h2><blockquote>
+<p>保证一个类仅有一个实例，并提供一个访问它的全局访问点。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 基于类的单例模式 */</span></span><br><span class="line"><span class="keyword">var</span> Singleton = <span class="function"><span class="keyword">function</span> (<span class="params">name</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name</span><br><span class="line">&#125;</span><br><span class="line">Singleton.prototype.getName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    alert(<span class="keyword">this</span>.name)</span><br><span class="line">&#125;</span><br><span class="line">Singleton.getInstance = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> instance = <span class="literal">null</span></span><br><span class="line">    <span class="built_in">console</span>.log(instance)</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">name</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!instance) &#123;</span><br><span class="line">            instance = <span class="keyword">new</span> Singleton(name)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> instance</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)()</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = Singleton.getInstance(<span class="string">'sven1'</span>)</span><br><span class="line"><span class="keyword">var</span> b = Singleton.getInstance(<span class="string">'sven2'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(a === b) <span class="comment">// true</span></span><br><span class="line">a.getName() <span class="comment">// sven1</span></span><br><span class="line">b.getName() <span class="comment">// sven1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 基于js的单例模式 */</span></span><br><span class="line"><span class="keyword">var</span> getSingle = <span class="function"><span class="keyword">function</span> (<span class="params">fn</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> result</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> result || (result = fn.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>))</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> createDiv = getSingle(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> div = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>)</span><br><span class="line">    div.innerHTML = <span class="string">'Hello World'</span></span><br><span class="line">    <span class="built_in">document</span>.body.appendChild(div)</span><br><span class="line">    <span class="keyword">return</span> div</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">createDiv()</span><br><span class="line">createDiv()</span><br></pre></td></tr></table></figure>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/12/13/设计模式/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-深入JavaScript之原型链" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -242,77 +319,6 @@
 
 
   
-    <article id="post-vue-element-ui不兼容ie的坑" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/22/vue-element-ui不兼容ie的坑/">vue+element-ui不兼容ie的坑</a>
-    </h1>
-  
-
-        
-        <a href="/2019/06/22/vue-element-ui不兼容ie的坑/" class="archive-article-date">
-  	<time datetime="2019-06-22T07:41:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一、vue项目在ie上报错"><a href="#一、vue项目在ie上报错" class="headerlink" title="一、vue项目在ie上报错"></a>一、vue项目在ie上报错</h2><p>vue项目打包后，在打包完成后的输出目录dist开启一个本地服务器，并修改代理地址到项目真实接口地址(http-server -p 服务器端口 -P 目标代理地址）。然后在ie浏览器上调试，进入主页面后会报出如下错误：<img src="/images/ie_wrong.png" alt="ie报错"></p>
-<p>可能原因：</p>
-<ul>
-<li>插件版本不对</li>
-<li>ie不识别ES6到promise语法</li>
-<li>js文件引入有问题</li>
-<li>babel插件转换没起作用</li>
-</ul>
-<p>检查项目后首先对第一、三种情况做了排除，其次考虑到ie不识别promise，引入了<code>es6-promise</code>插件后还是报错，所以错误定位在babel转换到问题，于是研究了下babel的使用方法、运行方式以及如何做对应的配置。</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/06/22/vue-element-ui不兼容ie的坑/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-this关键字" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -366,80 +372,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/04/06/this关键字/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JavaScript常用的简洁高级技巧" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/06/JavaScript常用的简洁高级技巧/">JavaScript常用的简洁高级技巧</a>
-    </h1>
-  
-
-        
-        <a href="/2019/04/06/JavaScript常用的简洁高级技巧/" class="archive-article-date">
-  	<time datetime="2019-04-06T06:42:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一、数据类型检测"><a href="#一、数据类型检测" class="headerlink" title="一、数据类型检测"></a>一、数据类型检测</h2><h4 id="1、typeof"><a href="#1、typeof" class="headerlink" title="1、typeof"></a>1、typeof</h4><p>typeof操作符返回一个字符串，表示未经计算的操作数的类型；该运算符数据类型返回字符串，对应如下：</p>
-<ul>
-<li>Undefined —— “undefined”</li>
-<li>Null —— “object”</li>
-<li>Boolean —— “boolean”</li>
-<li>Number —— “number”</li>
-<li>String —— “string”</li>
-<li>Symbol —— “symbol”</li>
-<li>宿主对象 —— implementation-dependent</li>
-<li>函数对象 —— “function”</li>
-<li>任何其它对象 —— “object”</li>
-</ul>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/04/06/JavaScript常用的简洁高级技巧/">展开全文 >></a>
         </p>
       
 
@@ -665,71 +597,6 @@
 
 
   
-    <article id="post-其实我们可以少写点if-else和switch" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/17/其实我们可以少写点if-else和switch/">其实我们可以少写点if else和switch</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/17/其实我们可以少写点if-else和switch/" class="archive-article-date">
-  	<time datetime="2019-02-17T09:32:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一、最基本if-else"><a href="#一、最基本if-else" class="headerlink" title="一、最基本if-else"></a>一、最基本if-else</h2><p>假设有这么个场景,不同情况下打印不同值。 因为涉及到的条件太多，就不提三目运算之类优化了。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (a == <span class="number">1</span>) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'a1'</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (a == <span class="number">2</span>) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'b2'</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (a == <span class="number">3</span>) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'c3'</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (a == <span class="number">4</span>) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'d4'</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* n..... */</span></span><br></pre></td></tr></table></figure>
-<p>现在还算能看，因为逻辑简单，如果逻辑复杂，迭代多个版本之后，你还敢动吗。每动一下就战战兢兢，谁知道哪里会遗漏。 那么换种方式呢?</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/17/其实我们可以少写点if-else和switch/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-Vue-源码中一些util函数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -859,6 +726,135 @@
 
 
   
+    <article id="post-js常用技巧" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/17/js常用技巧/">js常用技巧</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/17/js常用技巧/" class="archive-article-date">
+  	<time datetime="2019-02-17T08:46:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、函数"><a href="#一、函数" class="headerlink" title="一、函数"></a>一、函数</h2><h4 id="1、强制参数"><a href="#1、强制参数" class="headerlink" title="1、强制参数"></a>1、强制参数</h4><p>默认情况下，如果不向函数参数传值，那么JS 会将函数参数设置为undefined。其它一些语言则会发出警告或错误。要执行参数分配，可以使用if语句抛出未定义的错误，或者可以利用强制参数。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mandatory = <span class="function"><span class="params">( )</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'Missing parameter!'</span>);</span><br><span class="line">&#125;</span><br><span class="line">foo = <span class="function">(<span class="params">bar = mandatory( </span>)) =&gt;</span> &#123;            <span class="comment">// 这里如果不传入参数，就会执行manadatory函数报出错误</span></span><br><span class="line">  <span class="keyword">return</span> bar;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/17/js常用技巧/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-求一个字符串是否包含另一个字符串的算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/31/求一个字符串是否包含另一个字符串的算法/">求一个字符串是否包含另一个字符串的算法</a>
+    </h1>
+  
+
+        
+        <a href="/2018/12/31/求一个字符串是否包含另一个字符串的算法/" class="archive-article-date">
+  	<time datetime="2018-12-31T08:23:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-31</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>求一个字符串是否包含另一个字符串，可能想到的是用封装好的方法，比如String.indexOf(str)可以判断一个字符串是否包含另一个字符串，如不包含返回-1。现在如果不使用方法，怎么实现比较好呢？</p>
+</blockquote>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/12/31/求一个字符串是否包含另一个字符串的算法/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -958,6 +954,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">原型链、继承</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
               </li>
             
             <div class="clearfix"></div>

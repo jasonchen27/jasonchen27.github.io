@@ -153,135 +153,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-js常用技巧" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/17/js常用技巧/">js常用技巧</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/17/js常用技巧/" class="archive-article-date">
-  	<time datetime="2019-02-17T08:46:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一、函数"><a href="#一、函数" class="headerlink" title="一、函数"></a>一、函数</h2><h4 id="1、强制参数"><a href="#1、强制参数" class="headerlink" title="1、强制参数"></a>1、强制参数</h4><p>默认情况下，如果不向函数参数传值，那么JS 会将函数参数设置为undefined。其它一些语言则会发出警告或错误。要执行参数分配，可以使用if语句抛出未定义的错误，或者可以利用强制参数。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mandatory = <span class="function"><span class="params">( )</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'Missing parameter!'</span>);</span><br><span class="line">&#125;</span><br><span class="line">foo = <span class="function">(<span class="params">bar = mandatory( </span>)) =&gt;</span> &#123;            <span class="comment">// 这里如果不传入参数，就会执行manadatory函数报出错误</span></span><br><span class="line">  <span class="keyword">return</span> bar;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/17/js常用技巧/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-求一个字符串是否包含另一个字符串的算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/31/求一个字符串是否包含另一个字符串的算法/">求一个字符串是否包含另一个字符串的算法</a>
-    </h1>
-  
-
-        
-        <a href="/2018/12/31/求一个字符串是否包含另一个字符串的算法/" class="archive-article-date">
-  	<time datetime="2018-12-31T08:23:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-31</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>求一个字符串是否包含另一个字符串，可能想到的是用封装好的方法，比如String.indexOf(str)可以判断一个字符串是否包含另一个字符串，如不包含返回-1。现在如果不使用方法，怎么实现比较好呢？</p>
-</blockquote>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/12/31/求一个字符串是否包含另一个字符串的算法/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-Vue项目优化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -392,75 +263,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/12/01/npm-scripts/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-函数节流" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/01/函数节流/">函数节流以及在Vue中遇到的坑</a>
-    </h1>
-  
-
-        
-        <a href="/2018/12/01/函数节流/" class="archive-article-date">
-  	<time datetime="2018-12-01T02:25:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一、什么是函数节流"><a href="#一、什么是函数节流" class="headerlink" title="一、什么是函数节流"></a>一、什么是函数节流</h2><blockquote>
-<p>js有些事件如resize，mousemove，scroll等是会不间断触发的，如果这些事件的函数中操作dom或者其他交互，会严重影响性能。为了避免这个问题，可以使用定时器来对函数进行节流。</p>
-</blockquote>
-<ul>
-<li>函数节流的思想是设置一个定时器，在指定时间间隔内运行代码时清除上一次的定时器，并设置另一个定时器，知道函数请求停止并超过时间间隔才会执行函数。</li>
-</ul>
-<h2 id="二、实现"><a href="#二、实现" class="headerlink" title="二、实现"></a>二、实现</h2><h4 id="1、两种实现方法"><a href="#1、两种实现方法" class="headerlink" title="1、两种实现方法"></a>1、两种实现方法</h4>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/12/01/函数节流/">展开全文 >></a>
         </p>
       
 
@@ -832,6 +634,210 @@
 
 
   
+    <article id="post-异步" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/31/异步/">异步</a>
+    </h1>
+  
+
+        
+        <a href="/2018/08/31/异步/" class="archive-article-date">
+  	<time datetime="2018-08-31T08:29:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-31</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、单线程"><a href="#一、单线程" class="headerlink" title="一、单线程"></a>一、单线程</h2><blockquote>
+<p>只有一个线程，只能做一件事</p>
+</blockquote>
+<h4 id="1、单线程原因：避免-DOM-渲染冲突"><a href="#1、单线程原因：避免-DOM-渲染冲突" class="headerlink" title="1、单线程原因：避免 DOM 渲染冲突"></a>1、单线程原因：避免 DOM 渲染冲突</h4><ul>
+<li>浏览器需要渲染 DOM</li>
+<li>JS 可以修改 DOM 结构</li>
+<li>JS 执行的时候，浏览器 DOM 渲染会暂停</li>
+<li>两段 JS 也不能同时执行（都修改 DOM 就冲突了）</li>
+<li>webworker 支持多线程，但是不能访问 DOM</li>
+</ul>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/08/31/异步/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-原型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/31/原型/">原型</a>
+    </h1>
+  
+
+        
+        <a href="/2018/08/31/原型/" class="archive-article-date">
+  	<time datetime="2018-08-31T02:02:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-31</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、jquery和zepto对原型的使用"><a href="#一、jquery和zepto对原型的使用" class="headerlink" title="一、jquery和zepto对原型的使用"></a>一、jquery和zepto对原型的使用</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> $p = $(<span class="string">'p'</span>)</span><br><span class="line">        $p.css(<span class="string">'font-size'</span>, <span class="string">'40px'</span>)  <span class="comment">// css是原型方法</span></span><br><span class="line">        alert($p.html())  <span class="comment">// html是原型方法</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">var</span> $div1 = $(<span class="string">'#div1'</span>)</span><br><span class="line">        $div1.css(<span class="string">'color'</span>, <span class="string">'blue'</span>)  <span class="comment">// css是原型方法</span></span><br><span class="line">        alert($div1.html())  <span class="comment">// html是原型方法</span></span><br></pre></td></tr></table></figure>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/08/31/原型/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-H5、CSS3总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/30/H5、CSS3总结/">H5、CSS3总结</a>
+    </h1>
+  
+
+        
+        <a href="/2018/08/30/H5、CSS3总结/" class="archive-article-date">
+  	<time datetime="2018-08-30T11:25:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、HTML5"><a href="#一、HTML5" class="headerlink" title="一、HTML5"></a>一、HTML5</h2><h4 id="1、新特性"><a href="#1、新特性" class="headerlink" title="1、新特性"></a>1、新特性</h4><ul>
+<li>用于绘画的Canvas元素</li>
+<li>用于媒介回放的video和audio元素</li>
+<li>对本地离线存储的更好的支持</li>
+<li>新的特殊内容元素，如：article、footer、header、nav、section</li>
+<li>新的表单控件，如：calendar、date、time、email、url、search</li>
+</ul>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/08/30/H5、CSS3总结/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -931,6 +937,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">原型链、继承</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
               </li>
             
             <div class="clearfix"></div>

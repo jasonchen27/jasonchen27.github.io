@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: 原型链、继承 | 轮子风很酷</title>
+  <title>设计模式笔记 | 轮子风很酷</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="Json&#39;s blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="轮子风很酷">
-<meta property="og:url" content="http://yoursite.com/tags/原型链、继承/index.html">
+  <meta name="description" content="一、 单例模式 保证一个类仅有一个实例，并提供一个访问它的全局访问点。  12345678910111213141516171819202122232425262728293031323334353637383940/* 基于类的单例模式 */var Singleton = function (name) &amp;#123;    this.name = name&amp;#125;Singleton.prot">
+<meta name="keywords" content="设计模式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="设计模式笔记">
+<meta property="og:url" content="http://yoursite.com/2020/12/13/设计模式/index.html">
 <meta property="og:site_name" content="轮子风很酷">
+<meta property="og:description" content="一、 单例模式 保证一个类仅有一个实例，并提供一个访问它的全局访问点。  12345678910111213141516171819202122232425262728293031323334353637383940/* 基于类的单例模式 */var Singleton = function (name) &amp;#123;    this.name = name&amp;#125;Singleton.prot">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-12-13T15:59:01.850Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="轮子风很酷">
+<meta name="twitter:title" content="设计模式笔记">
+<meta name="twitter:description" content="一、 单例模式 保证一个类仅有一个实例，并提供一个访问它的全局访问点。  12345678910111213141516171819202122232425262728293031323334353637383940/* 基于类的单例模式 */var Singleton = function (name) &amp;#123;    this.name = name&amp;#125;Singleton.prot">
   
     <link rel="alternative" href="/atom.xml" title="轮子风很酷" type="application/atom+xml">
   
@@ -151,60 +155,185 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-设计模式" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/21/深入JavaScript之原型链/" class="archive-article-date">
-  	<time datetime="2020-04-21T02:32:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-21</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/21/深入JavaScript之原型链/">深入JavaScript之原型链</a>
+    <h1 class="article-title" itemprop="name">
+      设计模式笔记
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/12/13/设计模式/" class="archive-article-date">
+  	<time datetime="2020-12-13T06:42:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、-单例模式"><a href="#一、-单例模式" class="headerlink" title="一、 单例模式"></a>一、 单例模式</h2><blockquote>
+<p>保证一个类仅有一个实例，并提供一个访问它的全局访问点。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 基于类的单例模式 */</span></span><br><span class="line"><span class="keyword">var</span> Singleton = <span class="function"><span class="keyword">function</span> (<span class="params">name</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name</span><br><span class="line">&#125;</span><br><span class="line">Singleton.prototype.getName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    alert(<span class="keyword">this</span>.name)</span><br><span class="line">&#125;</span><br><span class="line">Singleton.getInstance = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> instance = <span class="literal">null</span></span><br><span class="line">    <span class="built_in">console</span>.log(instance)</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">name</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!instance) &#123;</span><br><span class="line">            instance = <span class="keyword">new</span> Singleton(name)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> instance</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)()</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = Singleton.getInstance(<span class="string">'sven1'</span>)</span><br><span class="line"><span class="keyword">var</span> b = Singleton.getInstance(<span class="string">'sven2'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(a === b) <span class="comment">// true</span></span><br><span class="line">a.getName() <span class="comment">// sven1</span></span><br><span class="line">b.getName() <span class="comment">// sven1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 基于js的单例模式 */</span></span><br><span class="line"><span class="keyword">var</span> getSingle = <span class="function"><span class="keyword">function</span> (<span class="params">fn</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> result</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> result || (result = fn.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>))</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> createDiv = getSingle(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> div = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>)</span><br><span class="line">    div.innerHTML = <span class="string">'Hello World'</span></span><br><span class="line">    <span class="built_in">document</span>.body.appendChild(div)</span><br><span class="line">    <span class="keyword">return</span> div</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">createDiv()</span><br><span class="line">createDiv()</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="二、-策略模式"><a href="#二、-策略模式" class="headerlink" title="二、 策略模式"></a>二、 策略模式</h2><blockquote>
+<p>定义一些列的算法，把他们一个个封装起来，并且使它们可以相互转换。</p>
+</blockquote>
+<p>策略模式的目的就是把算法的使用与算法的实现分离开来。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 基于类的策略模式 计算奖金 */</span></span><br><span class="line"><span class="keyword">var</span> performanceS = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">performanceS.prototype.calculate = <span class="function"><span class="keyword">function</span>(<span class="params">salary</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> salary * <span class="number">4</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> performanceA = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">performanceA.prototype.calculate = <span class="function"><span class="keyword">function</span> (<span class="params">salary</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> salary * <span class="number">3</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> performanceB = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">performanceB.prototype.calculate = <span class="function"><span class="keyword">function</span> (<span class="params">salary</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> salary * <span class="number">2</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> Bonus = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.salary = <span class="literal">null</span></span><br><span class="line">    <span class="keyword">this</span>.strategy = <span class="literal">null</span></span><br><span class="line">&#125;</span><br><span class="line">Bonus.prototype.setSalary = <span class="function"><span class="keyword">function</span> (<span class="params">salary</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.salary = salary</span><br><span class="line">&#125;</span><br><span class="line">Bonus.prototype.setStrategy = <span class="function"><span class="keyword">function</span> (<span class="params">strategy</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.strategy = strategy</span><br><span class="line">&#125;</span><br><span class="line">Bonus.prototype.getBonus = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.strategy.calculate(<span class="keyword">this</span>.salary)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> bonus = <span class="keyword">new</span> Bonus()</span><br><span class="line">bonus.setSalary(<span class="number">1000</span>)</span><br><span class="line">bonus.setStrategy(<span class="keyword">new</span> performanceS())</span><br><span class="line"><span class="built_in">console</span>.log(bonus.getBonus())</span><br><span class="line"></span><br><span class="line">bonus.setStrategy(<span class="keyword">new</span> performanceA())</span><br><span class="line"><span class="built_in">console</span>.log(bonus.getBonus())</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 基于js的策略模式 计算奖金*/</span></span><br><span class="line"><span class="keyword">var</span> strategies = &#123;</span><br><span class="line">    <span class="string">'S'</span>: <span class="function"><span class="keyword">function</span> (<span class="params">salary</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> salary * <span class="number">4</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">'A'</span>: <span class="function"><span class="keyword">function</span> (<span class="params">salary</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> salary * <span class="number">3</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">'B'</span>: <span class="function"><span class="keyword">function</span> (<span class="params">salary</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> salary * <span class="number">2</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> calculateBonus = <span class="function"><span class="keyword">function</span> (<span class="params">level, salary</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> strategies[level](salary)</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(calculateBonus(<span class="string">'S'</span>, <span class="number">2000</span>))</span><br><span class="line"><span class="built_in">console</span>.log(calculateBonus(<span class="string">'A'</span>, <span class="number">1000</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">/*策略模式 表单校验的实现*/</span></span><br><span class="line"><span class="keyword">var</span> strategies = &#123;</span><br><span class="line">    isNonEmpty: <span class="function"><span class="keyword">function</span> (<span class="params">value, errorMsg</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (value === <span class="string">''</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> errorMsg</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    minLength: <span class="function"><span class="keyword">function</span> (<span class="params">value, length, errorMsg</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (value.length &lt; length) &#123;</span><br><span class="line">            <span class="keyword">return</span> errorMsg</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    isMobile: <span class="function"><span class="keyword">function</span> (<span class="params">value, errorMsg</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!<span class="regexp">/(^1[3|5|8][0-9]&#123;9&#125;$)/</span>.test(value)) &#123;</span><br><span class="line">            <span class="keyword">return</span> errorMsg</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> Validator = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.cache = []</span><br><span class="line">&#125;</span><br><span class="line">Validator.prototype.add = <span class="function"><span class="keyword">function</span> (<span class="params">dom, rules</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> self = <span class="keyword">this</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, rule; rule = rules[i++];) &#123;</span><br><span class="line">        (<span class="function"><span class="keyword">function</span>(<span class="params">rule</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> strategyAry = rule.strategy.split(<span class="string">':'</span>)</span><br><span class="line">            <span class="keyword">var</span> errorMsg = rule.errorMsg</span><br><span class="line">            self.cache.push(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                <span class="keyword">var</span> strategy = strategyAry.shift()</span><br><span class="line">                strategyAry.unshift(dom.value)</span><br><span class="line">                strategyAry.push(errorMsg)</span><br><span class="line">                <span class="keyword">return</span> strategies[strategy].apply(dom, strategyAry)</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;(rule))</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">Validator.prototype.start = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, validatorFunc; validatorFunc = <span class="keyword">this</span>.cache[i++];) &#123;</span><br><span class="line">        <span class="keyword">var</span> errorMsg = validatorFunc()</span><br><span class="line">        <span class="keyword">if</span> (errorMsg) &#123;</span><br><span class="line">            <span class="keyword">return</span> errorMsg</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> div = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>)</span><br><span class="line">div.innerHTML = <span class="string">`</span></span><br><span class="line"><span class="string">    &lt;form id="registerForm"&gt;</span></span><br><span class="line"><span class="string">        用户名：&lt;input name="userName" /&gt;</span></span><br><span class="line"><span class="string">        密码：&lt;input name="password" /&gt;</span></span><br><span class="line"><span class="string">        手机号：&lt;input name="phoneNumber" /&gt;</span></span><br><span class="line"><span class="string">        &lt;div onclick="submit()"&gt;提交&lt;/div&gt;</span></span><br><span class="line"><span class="string">    &lt;/form&gt;</span></span><br><span class="line"><span class="string">`</span></span><br><span class="line"><span class="built_in">document</span>.body.appendChild(div)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> registerForm = <span class="built_in">document</span>.getElementById(<span class="string">'registerForm'</span>)</span><br><span class="line"><span class="keyword">var</span> validataFunc = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> validator = <span class="keyword">new</span> Validator()</span><br><span class="line">    validator.add(registerForm.userName, [&#123;</span><br><span class="line">        strategy: <span class="string">'isNonEmpty'</span>,</span><br><span class="line">        errorMsg: <span class="string">'用户名不能为空'</span></span><br><span class="line">    &#125;, &#123;</span><br><span class="line">        strategy: <span class="string">'minLength:6'</span>,</span><br><span class="line">        errorMsg: <span class="string">'用户名长度不能小于6位'</span></span><br><span class="line">    &#125;])</span><br><span class="line">    validator.add(registerForm.password, [&#123;</span><br><span class="line">        strategy: <span class="string">'minLength:6'</span>,</span><br><span class="line">        errorMsg: <span class="string">'密码长度不能小于6位'</span></span><br><span class="line">    &#125;])</span><br><span class="line">    validator.add(registerForm.phoneNumber, [&#123;</span><br><span class="line">        strategy: <span class="string">'isMobile'</span>,</span><br><span class="line">        errorMsg: <span class="string">'手机号码格式不正确'</span></span><br><span class="line">    &#125;])</span><br><span class="line">    <span class="keyword">var</span> errorMsg = validator.start()</span><br><span class="line">    <span class="keyword">return</span> errorMsg</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">submit</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> errorMsg = validataFunc()</span><br><span class="line">    <span class="keyword">if</span> (errorMsg) &#123;</span><br><span class="line">        alert(errorMsg)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/images/alipay.jpeg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/images/weixin_alipay.jpeg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">原型链、继承</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/12/13/设计模式/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2020/04/21/深入JavaScript之原型链/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">深入JavaScript之原型链</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -228,9 +357,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
