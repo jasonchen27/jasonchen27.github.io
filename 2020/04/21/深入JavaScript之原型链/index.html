@@ -6,12 +6,12 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>深入JavaScript之原型链 | 轮子风很酷</title>
+  <title>深入JavaScript原型链笔记 | 轮子风很酷</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="一、对象属性 ECMAScript中有两种属性：数据属性和访问器属性  1、数据属性 数据属性包含一个数据值的位置。在这个位置可以读取和写入值。  数据属性有4个描述其行为的特性：  [[Configurable]]：表示能否通过delete删除属性从而重新定义属性，能否修改属性的特性，或者能否把属性修改为访问器属性。默认值为true。 [[Enumerable]]：表示能否通过for-in循环返">
 <meta name="keywords" content="原型链、继承">
 <meta property="og:type" content="article">
-<meta property="og:title" content="深入JavaScript之原型链">
+<meta property="og:title" content="深入JavaScript原型链笔记">
 <meta property="og:url" content="http://yoursite.com/2020/04/21/深入JavaScript之原型链/index.html">
 <meta property="og:site_name" content="轮子风很酷">
 <meta property="og:description" content="一、对象属性 ECMAScript中有两种属性：数据属性和访问器属性  1、数据属性 数据属性包含一个数据值的位置。在这个位置可以读取和写入值。  数据属性有4个描述其行为的特性：  [[Configurable]]：表示能否通过delete删除属性从而重新定义属性，能否修改属性的特性，或者能否把属性修改为访问器属性。默认值为true。 [[Enumerable]]：表示能否通过for-in循环返">
@@ -22,9 +22,9 @@
 <meta property="og:image" content="http://yoursite.com/images/prototype/prototype_2.jpg">
 <meta property="og:image" content="http://yoursite.com/images/prototype/prototype_4.jpg">
 <meta property="og:image" content="http://yoursite.com/images/prototype/prototype_5.jpg">
-<meta property="og:updated_time" content="2020-04-21T17:41:18.148Z">
+<meta property="og:updated_time" content="2021-01-20T08:54:04.385Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="深入JavaScript之原型链">
+<meta name="twitter:title" content="深入JavaScript原型链笔记">
 <meta name="twitter:description" content="一、对象属性 ECMAScript中有两种属性：数据属性和访问器属性  1、数据属性 数据属性包含一个数据值的位置。在这个位置可以读取和写入值。  数据属性有4个描述其行为的特性：  [[Configurable]]：表示能否通过delete删除属性从而重新定义属性，能否修改属性的特性，或者能否把属性修改为访问器属性。默认值为true。 [[Enumerable]]：表示能否通过for-in循环返">
 <meta name="twitter:image" content="http://yoursite.com/images/prototype/prototype_1.jpg">
   
@@ -169,7 +169,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      深入JavaScript之原型链
+      深入JavaScript原型链笔记
     </h1>
   
 
@@ -405,7 +405,7 @@
 <p>例如：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">object</span>(<span class="params">o</span>) </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">  F.prototype = o</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> F()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 寄生组合式继承的基本模式</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">inheritPrototype</span>(<span class="params">subType, superType</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> prototype = object(superType.prototype) <span class="comment">// 创建对象，创建超类型原型的一个副本</span></span><br><span class="line">  prototype.constructor = subType <span class="comment">// 增强对象，弥补因重写原型而失去的默认的constructor属性</span></span><br><span class="line">  subType.prototype = prototype <span class="comment">// 指定对象，将新创建的对象（即副本）赋值给子类型的原型。</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SuperType</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name</span><br><span class="line">  <span class="keyword">this</span>.colors = [<span class="string">"red"</span>, <span class="string">"blue"</span>, <span class="string">"green"</span>]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">SuperType.prototype.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'My name is '</span> + <span class="keyword">this</span>.name)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SubType</span>(<span class="params">name, age</span>) </span>&#123;</span><br><span class="line">  SuperType.call(<span class="keyword">this</span>, name)</span><br><span class="line">  <span class="keyword">this</span>.age = age</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">inheritPrototype(SubType, SuperType)</span><br><span class="line"></span><br><span class="line">SubType.prototype.sayAge = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.age)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> instance = <span class="keyword">new</span> SubType(<span class="string">'Jason'</span>, <span class="number">28</span>)</span><br><span class="line">instance.colors.push(<span class="string">'black'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(instance.colors)  <span class="comment">// “red,blue,green,black”</span></span><br><span class="line">instance.sayName() <span class="comment">// Jason</span></span><br><span class="line">instance.sayAge() <span class="comment">// 28</span></span><br></pre></td></tr></table></figure>
 <p>开发人员普遍认为寄生组合式继承是引用类型最理想的继承范式。</p>
-<p>(参考资料: JavaScript高级程序设计（第3版）)</p>
+<p>(摘自: JavaScript高级程序设计（第3版）)</p>
 
       
 
