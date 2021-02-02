@@ -22,7 +22,7 @@
 <meta property="og:image" content="http://yoursite.com/images/prototype/prototype_2.jpg">
 <meta property="og:image" content="http://yoursite.com/images/prototype/prototype_4.jpg">
 <meta property="og:image" content="http://yoursite.com/images/prototype/prototype_5.jpg">
-<meta property="og:updated_time" content="2021-01-20T08:54:04.385Z">
+<meta property="og:updated_time" content="2021-01-20T09:55:06.454Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入JavaScript原型链笔记">
 <meta name="twitter:description" content="一、对象属性 ECMAScript中有两种属性：数据属性和访问器属性  1、数据属性 数据属性包含一个数据值的位置。在这个位置可以读取和写入值。  数据属性有4个描述其行为的特性：  [[Configurable]]：表示能否通过delete删除属性从而重新定义属性，能否修改属性的特性，或者能否把属性修改为访问器属性。默认值为true。 [[Enumerable]]：表示能否通过for-in循环返">
@@ -58,7 +58,7 @@
 			<img src="/images/profile_img.png" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Jason Chen</a></h1>
+		  <h1 class="header-author"><a href="/">Jason Chan</a></h1>
 		</hgroup>
 		
 
@@ -116,7 +116,7 @@
 				<img src="/images/profile_img.png" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Jason Chen</h1>
+			  <h1 class="header-author js-header-author">Jason Chan</h1>
 			</hgroup>
 			
 			
@@ -249,7 +249,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(person1.constructor === Person)  <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(person2.constructor === Person)  <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
 <p>检测对象类型，还是用<code>instanceof</code>操作符要更可靠一些。这个例子中，创建的所有对象既是Object的实例，同时也是Person的实例，这一点通过instanceof操作符可以得到验证：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(person1 <span class="keyword">instanceof</span> <span class="built_in">Object</span>)  <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(person1 <span class="keyword">instanceof</span> Person)  <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(person2 <span class="keyword">instanceof</span> <span class="built_in">Object</span>)  <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(person2 <span class="keyword">instanceof</span> Person)  <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
-<p>创建自定义的构造函数意味着将来可以将它的实例标识为一种特定的类型；而这正式构造函数模式胜过工厂模式的地方。</p>
+<p>创建自定义的构造函数意味着将来可以将它的实例标识为一种特定的类型；而这正是构造函数模式胜过工厂模式的地方。</p>
 <p>存在的缺点： person1和person2都有一个名为introduceMyself()的方法，但那两个方法不是同一个Function的实例。ECMAScript中的函数是对象，因此每定义一个函数，也就是实例化了一个对象。从逻辑角度讲，此时的构造函数是这样定义的：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age, job</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name</span><br><span class="line">  <span class="keyword">this</span>.age = age</span><br><span class="line">  <span class="keyword">this</span>.job = job</span><br><span class="line">  <span class="keyword">this</span>.introduceMyself = <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">"console.log('My name is ' + this.name + ', ' + this.age + ' years old now, a ' + this.job)"</span>) <span class="comment">// 与声明函数在逻辑上是等价的</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person(<span class="string">'Jason'</span>, <span class="number">28</span>, <span class="string">'Software Engineer'</span>)</span><br><span class="line"><span class="keyword">var</span> person2 = <span class="keyword">new</span> Person(<span class="string">'ChenYajie'</span>, <span class="number">30</span>, <span class="string">'Android Software Engineer'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 以下代码可以证明这一点</span></span><br><span class="line"><span class="built_in">console</span>.log(person1.introduceMyself == person2.introduceMyself)  <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
 <p>优化方案：</p>
@@ -574,7 +574,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2021 Jason Chen
+    		&copy; 2021 Jason Chan
     	</div>
       	<div class="footer-right">
       		<a href="http://www.lovexixi.cn" target="_blank">个人专属博客 | Personal blog</a>
