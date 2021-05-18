@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="轮子风很酷">
 <meta property="og:description" content="一、webpack是什么 webpack 是一个用于现代 JavaScript 应用程序的 静态模块打包工具。当 webpack 处理应用程序时，它会在内部构建一个依赖图，此依赖图对应映射到项目所需的每个模块，并生成一个或多个 bundle。  1、功能 编译、打包 HMR (模块热更新) 代码分割 文件处理 Tree Shaking ES module 动态 Import Scope Hoist">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2021-05-18T05:35:20.642Z">
+<meta property="og:updated_time" content="2021-05-18T06:47:45.428Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="webpack总结">
 <meta name="twitter:description" content="一、webpack是什么 webpack 是一个用于现代 JavaScript 应用程序的 静态模块打包工具。当 webpack 处理应用程序时，它会在内部构建一个依赖图，此依赖图对应映射到项目所需的每个模块，并生成一个或多个 bundle。  1、功能 编译、打包 HMR (模块热更新) 代码分割 文件处理 Tree Shaking ES module 动态 Import Scope Hoist">
@@ -210,6 +210,63 @@
 <li>优化相关：CommonsChunkPlugin、UglifyjsWebpackPlugin</li>
 <li>功能相关：ExtractTextWebpackPlugin、HtmlWebpackPlugin、HotModuleReplacementPlugin、    CopyWebpackPlugin</li>
 </ul>
+<h1 id="二、webpack的使用"><a href="#二、webpack的使用" class="headerlink" title="二、webpack的使用"></a>二、webpack的使用</h1><h2 id="1、打包命令"><a href="#1、打包命令" class="headerlink" title="1、打包命令"></a>1、打包命令</h2><p>webpack –config webpack.conf.js</p>
+<h2 id="2、编译ES6-7语法"><a href="#2、编译ES6-7语法" class="headerlink" title="2、编译ES6/7语法"></a>2、编译ES6/7语法</h2><h4 id="1、安装babel-loader、babel-core"><a href="#1、安装babel-loader、babel-core" class="headerlink" title="1、安装babel-loader、babel-core"></a>1、安装babel-loader、babel-core</h4><p>npm install <a href="mailto:babel-loader@8.0.0-beta.0" target="_blank" rel="noopener">babel-loader@8.0.0-beta.0</a> @babel/core<br>或<br>npm install –save-dev babel-loader babel-core</p>
+<h4 id="2、安装Babel-Presets"><a href="#2、安装Babel-Presets" class="headerlink" title="2、安装Babel Presets"></a>2、安装Babel Presets</h4><p>npm install @babel/preset-env –save-dev<br>或<br>npm install babel-preset-env –save-dev</p>
+<p>相关规范：</p>
+<ul>
+<li>es2015</li>
+<li>es2016</li>
+<li>es2017</li>
+<li>env</li>
+<li>babel-preset-react</li>
+<li>babel-preset-stage 0 - 3</li>
+</ul>
+<p>target属性：</p>
+<ul>
+<li>browsers，如：browsers：[‘&gt; 1%’, ‘last 2 versions’]</li>
+<li>【browserslist】，如： chrome: ‘52’</li>
+</ul>
+<h4 id="3、配置"><a href="#3、配置" class="headerlink" title="3、配置"></a>3、配置</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  entry: &#123;</span><br><span class="line">    app: <span class="string">'app.js'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  output: &#123;</span><br><span class="line">    filename: <span class="string">'[name].[hash:8].js'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="built_in">module</span>: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.js$/</span>,</span><br><span class="line">        use: &#123;</span><br><span class="line">          loader: <span class="string">'babel-laoder'</span>,</span><br><span class="line">          options: &#123;</span><br><span class="line">            presets: [</span><br><span class="line">              [<span class="string">'@babel/preset-env'</span>, &#123;</span><br><span class="line">                target: &#123;</span><br><span class="line">                  browsers: [<span class="string">'&gt; 1%'</span>, <span class="string">'last 2 versions'</span>]</span><br><span class="line">                &#125;</span><br><span class="line">              &#125;]</span><br><span class="line">            ]</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        exclude: <span class="string">'/node_modules/'</span></span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3、处理ES6-7函数和方法"><a href="#3、处理ES6-7函数和方法" class="headerlink" title="3、处理ES6/7函数和方法"></a>3、处理ES6/7函数和方法</h2><p>如：</p>
+<ul>
+<li>Generator</li>
+<li>Set</li>
+<li>Map</li>
+<li>Array.from</li>
+<li>Array.prototype.includes</li>
+</ul>
+<h4 id="1、Babel-Polyfill"><a href="#1、Babel-Polyfill" class="headerlink" title="1、Babel Polyfill"></a>1、Babel Polyfill</h4><p>Babel Polyfill作为全局垫片，为应用作准备。</p>
+<p>使用：</p>
+<ul>
+<li>npm install babel-polyfill –save</li>
+<li>import ‘babel-polyfill’</li>
+</ul>
+<h4 id="2、Babel-Runtime-Transform"><a href="#2、Babel-Runtime-Transform" class="headerlink" title="2、Babel Runtime Transform"></a>2、Babel Runtime Transform</h4><p>Babel Runtime Transform作为局部垫片，为开发框架准备。</p>
+<p>使用：</p>
+<ul>
+<li>npm install babel-plugin-transform-runtime –save-dev</li>
+<li>npm install babel-runtime –save</li>
+<li>根目录创建.babelrc并配置</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* .babelrc文件 */</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">"presets"</span>: [</span><br><span class="line">    [<span class="string">"@babel/preset-env"</span>, &#123;</span><br><span class="line">      <span class="string">"target"</span>: &#123;</span><br><span class="line">        <span class="string">"browsers"</span>: [<span class="string">"last 2 versions"</span>]</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;]</span><br><span class="line">  ],</span><br><span class="line">  <span class="string">"plugins"</span>: [<span class="string">"@babel/transform-runtime"</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3、配置Typescript"><a href="#3、配置Typescript" class="headerlink" title="3、配置Typescript"></a>3、配置Typescript</h2><h4 id="1、安装typesript-loader"><a href="#1、安装typesript-loader" class="headerlink" title="1、安装typesript-loader"></a>1、安装typesript-loader</h4><p>官方 npm i typescipt ts-loader  –save-dev<br>或<br>第三方 npm i typescipt awesome-typescript-loader  –save-dev</p>
+<h4 id="2、配置"><a href="#2、配置" class="headerlink" title="2、配置"></a>2、配置</h4><p>1、根目录创建 tsconfig.json<br>常用选项：</p>
+<ul>
+<li>compilerOptions</li>
+<li>include</li>
+<li>exclude</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* tsconfig.json文件 */</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">"compilerOptions"</span>: &#123;</span><br><span class="line">    <span class="string">"module"</span>: <span class="string">"commonjs"</span>,</span><br><span class="line">    <span class="string">"target"</span>: <span class="string">"es5"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">"include"</span>: [</span><br><span class="line">    <span class="string">"./src/*"</span></span><br><span class="line">  ],</span><br><span class="line">  <span class="string">"exclude"</span>: [</span><br><span class="line">    <span class="string">"./node_module"</span></span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>2、webpack.config.js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* webpack.config.js文件 */</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  entry: &#123;</span><br><span class="line">    <span class="string">'app'</span>: <span class="string">'app.js'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  output: &#123;</span><br><span class="line">    filename: <span class="string">'[name].bundle.js'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="built_in">module</span>: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.tsx?$/</span>,</span><br><span class="line">        use: <span class="string">'ts-loader'</span></span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="3、其它类型声明文件"><a href="#3、其它类型声明文件" class="headerlink" title="3、其它类型声明文件"></a>3、其它类型声明文件</h4><p>npm install @types/lodash</p>
+<p>npm install @types/vue</p>
+<h4 id="4、工具：Typings"><a href="#4、工具：Typings" class="headerlink" title="4、工具：Typings"></a>4、工具：Typings</h4><ul>
+<li>npm install typings</li>
+<li>typings install lodash</li>
+</ul>
+<p>配置typeRoots属性：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* tsconfig.json文件 */</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">"compilerOptions"</span>: &#123;</span><br><span class="line">    <span class="string">"module"</span>: <span class="string">"commonjs"</span>,</span><br><span class="line">    <span class="string">"target"</span>: <span class="string">"es5"</span>,</span><br><span class="line">    <span class="string">"typeRoots"</span>: [</span><br><span class="line">      <span class="string">"./node_modules/@types"</span>,</span><br><span class="line">      <span class="string">"./typings/modules"</span></span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">"include"</span>: [</span><br><span class="line">    <span class="string">"./src/*"</span></span><br><span class="line">  ],</span><br><span class="line">  <span class="string">"exclude"</span>: [</span><br><span class="line">    <span class="string">"./node_module"</span></span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
 
