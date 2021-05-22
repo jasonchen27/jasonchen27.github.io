@@ -406,45 +406,167 @@
 
 
   
-    <article id="post-this关键字" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-MVVM" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/06/this关键字/">this关键字</a>
+      <a class="article-title" href="/2018/09/02/MVVM/">MVVM</a>
     </h1>
   
 
         
-        <a href="/2019/04/06/this关键字/" class="archive-article-date">
-  	<time datetime="2019-04-06T07:09:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-06</time>
+        <a href="/2018/09/02/MVVM/" class="archive-article-date">
+  	<time datetime="2018-09-02T10:22:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-02</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="一、this是什么？"><a href="#一、this是什么？" class="headerlink" title="一、this是什么？"></a>一、this是什么？</h2><blockquote>
-<p>this 就是一个指针，指向调用函数的对象。</p>
+        <h2 id="一、理解-MVVM"><a href="#一、理解-MVVM" class="headerlink" title="一、理解 MVVM"></a>一、理解 MVVM</h2><h4 id="1、jquery和vue的不同"><a href="#1、jquery和vue的不同" class="headerlink" title="1、jquery和vue的不同"></a>1、jquery和vue的不同</h4><h6 id="i、-jQuery-实现-todo-list"><a href="#i、-jQuery-实现-todo-list" class="headerlink" title="i、 jQuery 实现 todo-list"></a>i、 jQuery 实现 todo-list</h6>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/09/02/MVVM/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-异步" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/31/异步/">异步</a>
+    </h1>
+  
+
+        
+        <a href="/2018/08/31/异步/" class="archive-article-date">
+  	<time datetime="2018-08-31T08:29:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-31</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、单线程"><a href="#一、单线程" class="headerlink" title="一、单线程"></a>一、单线程</h2><blockquote>
+<p>只有一个线程，只能做一件事</p>
 </blockquote>
-<p>this指向的是什么，我们首先需要知道this的绑定规则有哪些:</p>
-<ul>
-<li>默认绑定</li>
-<li>隐式绑定</li>
-<li>硬绑定</li>
-<li>new绑定</li>
+<h4 id="1、单线程原因：避免-DOM-渲染冲突"><a href="#1、单线程原因：避免-DOM-渲染冲突" class="headerlink" title="1、单线程原因：避免 DOM 渲染冲突"></a>1、单线程原因：避免 DOM 渲染冲突</h4><ul>
+<li>浏览器需要渲染 DOM</li>
+<li>JS 可以修改 DOM 结构</li>
+<li>JS 执行的时候，浏览器 DOM 渲染会暂停</li>
+<li>两段 JS 也不能同时执行（都修改 DOM 就冲突了）</li>
+<li>webworker 支持多线程，但是不能访问 DOM</li>
 </ul>
-<h4 id="1、默认绑定"><a href="#1、默认绑定" class="headerlink" title="1、默认绑定"></a>1、默认绑定</h4><blockquote>
-<p>默认绑定，在不能应用其它绑定规则时使用的默认规则，通常是独立函数调用。</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHi</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Hello,'</span>, <span class="keyword">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> name = <span class="string">'YvetteLau'</span>;</span><br><span class="line">sayHi();</span><br></pre></td></tr></table></figure>
-<p>注：</p>
-<ul>
-<li>在调用Hi()时，应用了默认绑定，this指向全局对象（非严格模式下），严格模式下，this指向undefined，undefined上没有this对象，会抛出错误。</li>
-<li>上面的代码，如果在浏览器环境中运行，那么结果就是 Hello,YvetteLau</li>
-<li>但是如果在node环境中运行，结果就是 Hello,undefined.这是因为node中name并不是挂在全局对象上的。</li>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/08/31/异步/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-H5、CSS3总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/30/H5、CSS3总结/">H5、CSS3总结</a>
+    </h1>
+  
+
+        
+        <a href="/2018/08/30/H5、CSS3总结/" class="archive-article-date">
+  	<time datetime="2018-08-30T11:25:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、HTML5"><a href="#一、HTML5" class="headerlink" title="一、HTML5"></a>一、HTML5</h2><h4 id="1、新特性"><a href="#1、新特性" class="headerlink" title="1、新特性"></a>1、新特性</h4><ul>
+<li>用于绘画的Canvas元素</li>
+<li>用于媒介回放的video和audio元素</li>
+<li>对本地离线存储的更好的支持</li>
+<li>新的特殊内容元素，如：article、footer、header、nav、section</li>
+<li>新的表单控件，如：calendar、date、time、email、url、search</li>
 </ul>
         
       
@@ -458,7 +580,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/04/06/this关键字/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/08/30/H5、CSS3总结/">展开全文 >></a>
         </p>
       
 
@@ -488,97 +610,29 @@
 
 
   
-    <article id="post-函数如何优雅的传参" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-前端实践总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/06/函数如何优雅的传参/">函数如何优雅的传参</a>
+      <a class="article-title" href="/2018/08/29/前端实践总结/">前端实践总结</a>
     </h1>
   
 
         
-        <a href="/2019/04/06/函数如何优雅的传参/" class="archive-article-date">
-  	<time datetime="2019-04-06T06:13:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-06</time>
+        <a href="/2018/08/29/前端实践总结/" class="archive-article-date">
+  	<time datetime="2018-08-29T13:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-29</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="一、传递对象而不是参数列表"><a href="#一、传递对象而不是参数列表" class="headerlink" title="一、传递对象而不是参数列表"></a>一、传递对象而不是参数列表</h2><p>和别人对接开发，有的同学开发有时候不会考虑别人是否对他的代码有依赖，直接脑袋一拍就给你的参数顺序对调了，结果代码提交后全军崩溃各种报错飘红。</p>
-<p>可以利用 JavaScript 的对象来传递参数：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">infomation</span> (<span class="params">user</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// user.name</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">infomation(&#123; <span class="attr">name</span>: <span class="string">'xiaoer'</span>, <span class="attr">age</span>: <span class="number">18</span> &#125;)</span><br></pre></td></tr></table></figure>
-<p>相对于参数列表传递对象属性更好记也没有强制的顺序，如果命名足够清晰在后期维护代码的时候甚至只要看属性名就可以马上理解过来。如果其他同学开发新的功能也不会怕他顺序乱调了，但是最好要对新加的参数做出兼容，不然还是会让依赖的其他函数一路飘红。</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/04/06/函数如何优雅的传参/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-递归注意事项" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/06/递归注意事项/">递归</a>
-    </h1>
-  
-
-        
-        <a href="/2019/04/06/递归注意事项/" class="archive-article-date">
-  	<time datetime="2019-04-06T05:08:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一、递归实现注意事项"><a href="#一、递归实现注意事项" class="headerlink" title="一、递归实现注意事项"></a>一、递归实现注意事项</h2><h4 id="1、递归容易堆栈溢出"><a href="#1、递归容易堆栈溢出" class="headerlink" title="1、递归容易堆栈溢出"></a>1、递归容易堆栈溢出</h4><blockquote>
-<p>函数调用会使用栈来保存临时变量。每调用一个函数，都会将临时变量封装为栈帧压入内存栈，等函数执行完成返回时，才出栈。而递归非常耗费内存，因为需要同时保存成千上百个调用帧，当数据规模较大的时候很容易发生“栈溢出”错误（stack overflow）。</p>
+        <h2 id="一、HTML"><a href="#一、HTML" class="headerlink" title="一、HTML"></a>一、HTML</h2><h4 id="1、HTML特质"><a href="#1、HTML特质" class="headerlink" title="1、HTML特质"></a>1、HTML特质</h4><blockquote>
+<p>高语义、高易用性</p>
 </blockquote>
-<p>如：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">factorial</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (n === <span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">return</span> n * factorial(n - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line">factorial(<span class="number">9999999</span>) <span class="comment">// 会报错：Maximum call stack size exceed</span></span><br></pre></td></tr></table></figure>
         
       
 
@@ -591,7 +645,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/04/06/递归注意事项/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/08/29/前端实践总结/">展开全文 >></a>
         </p>
       
 
@@ -621,27 +675,29 @@
 
 
   
-    <article id="post-deepClone" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Vue基础和Api" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/06/deepClone/">deepClone</a>
+      <a class="article-title" href="/2018/08/22/Vue基础和Api/">Vue基础和Api</a>
     </h1>
   
 
         
-        <a href="/2019/04/06/deepClone/" class="archive-article-date">
-  	<time datetime="2019-04-06T04:33:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-06</time>
+        <a href="/2018/08/22/Vue基础和Api/" class="archive-article-date">
+  	<time datetime="2018-08-22T02:50:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-22</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="一、深克隆的实现"><a href="#一、深克隆的实现" class="headerlink" title="一、深克隆的实现"></a>一、深克隆的实现</h2><h4 id="1、经典的-json-方法实现深克隆–-gt-非完美解决方法"><a href="#1、经典的-json-方法实现深克隆–-gt-非完美解决方法" class="headerlink" title="1、经典的 json 方法实现深克隆–&gt;非完美解决方法"></a>1、经典的 json 方法实现深克隆–&gt;非完美解决方法</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> Jack = <span class="keyword">new</span> Person(<span class="string">'Jack'</span>);</span><br><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">    a: <span class="number">1</span>,</span><br><span class="line">    b: <span class="function"><span class="keyword">function</span> (<span class="params">arg</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'我是独一无二的，json复制不了我'</span>);</span><br><span class="line">    &#125;,</span><br><span class="line">    c: &#123;</span><br><span class="line">        d: <span class="number">3</span>,</span><br><span class="line">        e: &#123;</span><br><span class="line">            f: [<span class="number">1</span>,[<span class="number">2</span>,[<span class="number">3</span>,[<span class="number">4</span>,[<span class="number">5</span>]]]]],</span><br><span class="line">            g: &#123;</span><br><span class="line">                h: <span class="number">5</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    date: [<span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">1536627600000</span>), <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">1540047600000</span>)],</span><br><span class="line">    reg: <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">'\\w+'</span>),</span><br><span class="line">    num: [<span class="literal">NaN</span>, <span class="literal">Infinity</span>, -<span class="literal">Infinity</span>],</span><br><span class="line">    person: Jack,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//json方法克隆</span></span><br><span class="line"><span class="keyword">let</span> obj2 = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(obj));</span><br><span class="line"><span class="built_in">console</span>.log(obj);</span><br><span class="line"><span class="built_in">console</span>.log(obj2);</span><br><span class="line">obj.c.e.f = <span class="number">1000</span>;<span class="comment">//改变源对象的值</span></span><br><span class="line">obj2.c.e.g.h = <span class="number">2000</span>;<span class="comment">//改变克隆对象的值</span></span><br><span class="line"><span class="built_in">console</span>.log(obj.c.e.f, obj2.c.e.f);</span><br><span class="line"><span class="built_in">console</span>.log( obj.c.e.g.h, obj2.c.e.g.h);</span><br></pre></td></tr></table></figure>
+        <h2 id="一、Vue基础"><a href="#一、Vue基础" class="headerlink" title="一、Vue基础"></a>一、Vue基础</h2><h4 id="1、要了解"><a href="#1、要了解" class="headerlink" title="1、要了解"></a>1、要了解</h4><blockquote>
+<p>Vue是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与现代化的工具链以及各种支持类库结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。</p>
+</blockquote>
         
       
 
@@ -654,7 +710,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/04/06/deepClone/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/08/22/Vue基础和Api/">展开全文 >></a>
         </p>
       
 
@@ -684,28 +740,30 @@
 
 
   
-    <article id="post-Vue-源码中一些util函数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-小程序笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/17/Vue-源码中一些util函数/">Vue 源码中一些util函数</a>
+      <a class="article-title" href="/2018/08/12/小程序笔记/">灭霸小程序项目笔记</a>
     </h1>
   
 
         
-        <a href="/2019/02/17/Vue-源码中一些util函数/" class="archive-article-date">
-  	<time datetime="2019-02-17T09:15:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-17</time>
+        <a href="/2018/08/12/小程序笔记/" class="archive-article-date">
+  	<time datetime="2018-08-12T05:37:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-12</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="1、Object-prototype-toString-call-arg-和-String-arg-的区别？"><a href="#1、Object-prototype-toString-call-arg-和-String-arg-的区别？" class="headerlink" title="1、Object.prototype.toString.call(arg) 和 String(arg) 的区别？"></a>1、Object.prototype.toString.call(arg) 和 String(arg) 的区别？</h4><p>String(arg) 会尝试调用 arg.toString() 或者 arg.valueOf(), 所以如果arg或者arg的原型重写了这两个方法，Object.prototype.toString.call(arg) 和 String(arg) 的结果就不同</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> _toString = <span class="built_in">Object</span>.prototype.toString</span><br><span class="line"><span class="keyword">var</span> obj = &#123;&#125;</span><br><span class="line"></span><br><span class="line">obj.toString()  <span class="comment">// [object Object]</span></span><br><span class="line">_toString.call(obj) <span class="comment">// [object Object]</span></span><br><span class="line"></span><br><span class="line">obj.toString = <span class="function"><span class="params">()</span> =&gt;</span> <span class="string">'111'</span></span><br><span class="line"></span><br><span class="line">obj.toString()  <span class="comment">// 111</span></span><br><span class="line">_toString.call(obj) <span class="comment">// [object Object]</span></span><br><span class="line"></span><br><span class="line">/hello/.toString() <span class="comment">// /hello/</span></span><br><span class="line">_toString.call(<span class="regexp">/hello/</span>) <span class="comment">// [object RegExp]</span></span><br></pre></td></tr></table></figure>
+        <h2 id="一、Es6"><a href="#一、Es6" class="headerlink" title="一、Es6"></a>一、Es6</h2><h4 id="1、要了解"><a href="#1、要了解" class="headerlink" title="1、要了解"></a>1、要了解</h4><blockquote>
+<p>JavaScript 语言的下一代标准，使用babel语法转换器，支持低端浏览器。</p>
+</blockquote>
+<h4 id="2、换行"><a href="#2、换行" class="headerlink" title="2、换行"></a>2、换行</h4><p>例1：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'hello &#123;name&#125;</span></span><br><span class="line"><span class="string">        hello world</span></span><br><span class="line"><span class="string">       '</span>)</span><br></pre></td></tr></table></figure></p>
         
       
 
@@ -718,7 +776,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/17/Vue-源码中一些util函数/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/08/12/小程序笔记/">展开全文 >></a>
         </p>
       
 
@@ -748,139 +806,6 @@
 
 
   
-    <article id="post-在项目实践中用更优雅的方式处理数组问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/17/在项目实践中用更优雅的方式处理数组问题/">在项目实践中用更优雅的方式处理数组问题</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/17/在项目实践中用更优雅的方式处理数组问题/" class="archive-article-date">
-  	<time datetime="2019-02-17T09:05:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一、使用Set处理数组去重和元素剔除问题"><a href="#一、使用Set处理数组去重和元素剔除问题" class="headerlink" title="一、使用Set处理数组去重和元素剔除问题"></a>一、使用Set处理数组去重和元素剔除问题</h2><h4 id="1、使用Set处理数组去重"><a href="#1、使用Set处理数组去重" class="headerlink" title="1、使用Set处理数组去重"></a>1、使用Set处理数组去重</h4><p>对于一个一维数组，我们可以先把它转化成Set，再配合…解构运算符重新转化为数组，达到去重的目的。请看例子</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">5</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> newArr = [...new <span class="built_in">Set</span>(arr)]</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(newArr)</span><br><span class="line"></span><br><span class="line"><span class="comment">// [1, 2, 3, 4, 5]</span></span><br></pre></td></tr></table></figure>
-<p>注：这个方法不能对元素为“对象”的数组奏效。</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/17/在项目实践中用更优雅的方式处理数组问题/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-js常用技巧" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/17/js常用技巧/">js常用技巧</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/17/js常用技巧/" class="archive-article-date">
-  	<time datetime="2019-02-17T08:46:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一、函数"><a href="#一、函数" class="headerlink" title="一、函数"></a>一、函数</h2><h4 id="1、强制参数"><a href="#1、强制参数" class="headerlink" title="1、强制参数"></a>1、强制参数</h4><p>默认情况下，如果不向函数参数传值，那么JS 会将函数参数设置为undefined。其它一些语言则会发出警告或错误。要执行参数分配，可以使用if语句抛出未定义的错误，或者可以利用强制参数。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mandatory = <span class="function"><span class="params">( )</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'Missing parameter!'</span>);</span><br><span class="line">&#125;</span><br><span class="line">foo = <span class="function">(<span class="params">bar = mandatory( </span>)) =&gt;</span> &#123;            <span class="comment">// 这里如果不传入参数，就会执行manadatory函数报出错误</span></span><br><span class="line">  <span class="keyword">return</span> bar;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/17/js常用技巧/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-  
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-    </nav>
   
 
 
